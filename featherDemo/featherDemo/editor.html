@@ -1,0 +1,32 @@
+<!DOCkTYPE html>
+<html>
+    <head>
+            <title>Rich Text Editor</title>
+            <style>
+                div#richTextArea{
+                    height : 100%;
+                    width : 100%;
+                    overflow: auto;
+                    display: block;
+                    font-family: 'HelveticaNeue';
+                    color:#666666;
+                    font-size: 12pt;
+                }
+                iframe#editor{
+                    height: 100%;
+                    width: 100%;
+                }
+            </style>
+            <script>
+                window.addEventListener("load",function(){
+                                        var richTextEditor = editor.document;
+                                        richTextEditor.designMode = "on";
+                                        }, false)
+            </script>
+    </head>
+    <body>
+        <div id="richTextArea">
+            <iframe id="editor" name="editor" frameborder="0"></iframe>
+        </div>
+    </body>
+</html>
