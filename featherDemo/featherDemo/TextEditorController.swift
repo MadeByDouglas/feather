@@ -37,7 +37,7 @@ final class TextEditorController: UIViewController, UITextViewDelegate {
         sourceView.translatesAutoresizingMaskIntoConstraints = false
 
 
-        stack = UIStackView(arrangedSubviews: [editView, sourceView])
+        stack = UIStackView(arrangedSubviews: [editView])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
         stack.alignment = .fill
