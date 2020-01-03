@@ -55,6 +55,13 @@ enum JSCommands {
         }
     }
     
+    var cleanHTML: String {
+        switch self {
+        case .froala: return "editor.html.cleanEmptyTags();"
+        case .quill: return ""
+        }
+    }
+    
     var hideToolbar: String {
         switch self {
         case .froala: return "editor.toolbar.hide();"

@@ -38,7 +38,7 @@ class EditWebView: WKWebView {
             } else if let dataString = data as? String {
                 completion(.success(dataString))
             } else {
-                print("UNABLE TO PARSE DATA")
+                completion(.success(""))
             }
 
         }
@@ -51,9 +51,17 @@ class TextEditor: NSView {
     let js = JSCommands.froala
     
     func getHTML(completion: @escaping StringCompletion) {
-        editorView.runJS(js.getHTML) { (result) in
-            completion(result)
+        editorView.runJS(js.cleanHTML) { (result) in
+            switch result {
+            case .success(_):
+                self.editorView.runJS(self.js.getHTML) { (result) in
+                    completion(result)
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
+
     }
     
     func toggleBold() {
