@@ -38,8 +38,10 @@ class ViewController: NSViewController {
         
         editView = TextEditor(frame: .zero)
         editView.translatesAutoresizingMaskIntoConstraints = false
+        editView.hideToolBar()
+        let button = NSButton(title: "bold", target: self, action: #selector(didTap))
         
-        stack = NSStackView(views: [editView])
+        stack = NSStackView(views: [editView, button])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
 
@@ -52,6 +54,17 @@ class ViewController: NSViewController {
             stack.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
+    }
+    
+    @objc func didTap() {
+        editView.getHTML { (result) in
+            switch result {
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 

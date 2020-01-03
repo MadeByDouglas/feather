@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C350FA5323BE72AD005F0CF6 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5223BE72AD005F0CF6 /* Commands.swift */; };
 		C3C131BC23B18683008648B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C131BB23B18683008648B6 /* AppDelegate.swift */; };
 		C3C131BE23B18683008648B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C131BD23B18683008648B6 /* ViewController.swift */; };
 		C3C131C023B18683008648B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3C131BF23B18683008648B6 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C350FA5223BE72AD005F0CF6 /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 		C3C131B823B18683008648B6 /* featherDemoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = featherDemoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C131BB23B18683008648B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3C131BD23B18683008648B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				C3C131BB23B18683008648B6 /* AppDelegate.swift */,
 				C3C131BD23B18683008648B6 /* ViewController.swift */,
 				C3C131D123B1869F008648B6 /* TextEditor.swift */,
+				C350FA5223BE72AD005F0CF6 /* Commands.swift */,
 				C3C131CC23B18695008648B6 /* editor.html */,
 				C3C131CD23B18695008648B6 /* froala.html */,
 				C3C131CB23B18695008648B6 /* quillTest.html */,
@@ -151,6 +154,7 @@
 				C3C131BE23B18683008648B6 /* ViewController.swift in Sources */,
 				C3C131D223B1869F008648B6 /* TextEditor.swift in Sources */,
 				C3C131BC23B18683008648B6 /* AppDelegate.swift in Sources */,
+				C350FA5323BE72AD005F0CF6 /* Commands.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

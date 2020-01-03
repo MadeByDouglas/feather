@@ -71,7 +71,7 @@ extension TextEditor: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         editorView.navigationDelegate = self
         editorView.uiDelegate = self
         
-        if let url = Bundle.main.url(forResource: "editor", withExtension: "html") {
+        if let url = Bundle.main.url(forResource: "froala", withExtension: "html") {
             let request = URLRequest(url: url)
             editorView.load(request)
         }

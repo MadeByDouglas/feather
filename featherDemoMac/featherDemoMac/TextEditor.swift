@@ -9,17 +9,75 @@
 import Foundation
 import WebKit
 
+typealias DataTaskResult = Swift.Result<(URLResponse, Data), Error>
+typealias DataTaskCompletion = (DataTaskResult) -> Void
+
+typealias StringResult = Swift.Result<String, Error>
+typealias StringCompletion = (StringResult) -> Void
+
+
 class EditWebView: WKWebView {
 
+    public func runJS(_ js: String, completion: StringCompletion? = nil) {
+        evaluateJavaScript(js) { (data, error) in
+            
+            guard let completion = completion else { return }
+            
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            
+            if let dataInt = data as? Int {
+                completion(.success("\(dataInt)"))
+                
+            } else if let dataBool = data as? Bool {
+                completion(.success(dataBool ? "true" : "false"))
+
+            } else if let dataString = data as? String {
+                completion(.success(dataString))
+            } else {
+                print("UNABLE TO PARSE DATA")
+            }
+
+        }
+    }
+    
 }
 
 class TextEditor: NSView {
     var editorView: EditWebView!
+    let js = JSCommands.froala
     
-    func getHTML() -> String {
-        //TODO: show source
-        
-        return ""
+    func getHTML(completion: @escaping StringCompletion) {
+        editorView.runJS(js.getHTML) { (result) in
+            completion(result)
+        }
+    }
+    
+    func toggleBold() {
+        editorView.runJS(js.bold)
+    }
+    
+    func toggleItalic() {
+        editorView.runJS(js.italic)
+    }
+    
+    func toggleUnderline() {
+        editorView.runJS(js.underline)
+    }
+    
+    func increaseIndent() {
+        editorView.runJS(js.indent)
+    }
+    
+    func reduceIndent() {
+        editorView.runJS(js.outdent)
+    }
+    
+    func hideToolBar() {
+        editorView.runJS(js.showToolbar)
     }
     
     override init(frame: CGRect) {
@@ -59,16 +117,6 @@ extension TextEditor: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
 
         editorView.navigationDelegate = self
         editorView.uiDelegate = self
-        
-        let label = NSTextField()
-        label.frame = CGRect(origin: .zero, size: CGSize(width: 100, height: 44))
-        label.stringValue = "My awesome label"
-        label.backgroundColor = .white
-        label.isBezeled = false
-        label.isEditable = false
-        label.sizeToFit()
-
-        addSubview(label)
         
         if let url = Bundle.main.url(forResource: "froala", withExtension: "html") {
             let request = URLRequest(url: url)
