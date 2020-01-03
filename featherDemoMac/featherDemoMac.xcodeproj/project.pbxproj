@@ -18,6 +18,19 @@
 		C3C131D223B1869F008648B6 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C131D123B1869F008648B6 /* TextEditor.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C350FA8F23C00440005F0CF6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		C350FA5223BE72AD005F0CF6 /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 		C3C131B823B18683008648B6 /* featherDemoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = featherDemoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +101,7 @@
 				C3C131B423B18683008648B6 /* Sources */,
 				C3C131B523B18683008648B6 /* Frameworks */,
 				C3C131B623B18683008648B6 /* Resources */,
+				C350FA8F23C00440005F0CF6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,6 +306,7 @@
 				CODE_SIGN_ENTITLEMENTS = featherDemoMac/featherDemoMac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 68KS6FN57P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = featherDemoMac/Info.plist;
@@ -312,6 +327,7 @@
 				CODE_SIGN_ENTITLEMENTS = featherDemoMac/featherDemoMac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 68KS6FN57P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = featherDemoMac/Info.plist;

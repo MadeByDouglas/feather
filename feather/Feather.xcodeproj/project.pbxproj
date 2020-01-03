@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A536A9FB23BFE6970011DD7D /* featherAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A536A9F223BFE6970011DD7D /* featherAppKit.framework */; };
+		A536A9FB23BFE6970011DD7D /* FeatherAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A536A9F223BFE6970011DD7D /* FeatherAppKit.framework */; };
 		A536AA0023BFE6970011DD7D /* featherAppKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A536A9FF23BFE6970011DD7D /* featherAppKitTests.swift */; };
 		A536AA0223BFE6970011DD7D /* featherAppKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A536A9F423BFE6970011DD7D /* featherAppKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C350FA5D23BFF7BF005F0CF6 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */; };
@@ -18,6 +18,7 @@
 		C350FA6223BFF7BF005F0CF6 /* froala.html in Resources */ = {isa = PBXBuildFile; fileRef = C350FA5C23BFF7BF005F0CF6 /* froala.html */; };
 		C350FA6423C000A9005F0CF6 /* quill.html in Resources */ = {isa = PBXBuildFile; fileRef = C350FA6323C000A9005F0CF6 /* quill.html */; };
 		C350FA6523C000A9005F0CF6 /* quill.html in Resources */ = {isa = PBXBuildFile; fileRef = C350FA6323C000A9005F0CF6 /* quill.html */; };
+		C350FA9023C004A9005F0CF6 /* FeatherAppKitTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = A536A9FA23BFE6970011DD7D /* FeatherAppKitTests.xctest */; };
 		C38988CD238494E20019BFF5 /* feather.h in Headers */ = {isa = PBXBuildFile; fileRef = C38988CB238494E20019BFF5 /* feather.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -32,17 +33,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A536A9F223BFE6970011DD7D /* featherAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = featherAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A536A9F223BFE6970011DD7D /* FeatherAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatherAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A536A9F423BFE6970011DD7D /* featherAppKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = featherAppKit.h; sourceTree = "<group>"; };
 		A536A9F523BFE6970011DD7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A536A9FA23BFE6970011DD7D /* featherAppKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = featherAppKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A536A9FA23BFE6970011DD7D /* FeatherAppKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeatherAppKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A536A9FF23BFE6970011DD7D /* featherAppKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = featherAppKitTests.swift; sourceTree = "<group>"; };
 		A536AA0123BFE6970011DD7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
 		C350FA5B23BFF7BF005F0CF6 /* Commands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 		C350FA5C23BFF7BF005F0CF6 /* froala.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = froala.html; sourceTree = "<group>"; };
 		C350FA6323C000A9005F0CF6 /* quill.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = quill.html; path = ../featherDemoMac/featherDemoMac/quill.html; sourceTree = "<group>"; };
-		C38988C8238494E20019BFF5 /* feather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = feather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38988C8238494E20019BFF5 /* Feather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38988CB238494E20019BFF5 /* feather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = feather.h; sourceTree = "<group>"; };
 		C38988CC238494E20019BFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A536A9FB23BFE6970011DD7D /* featherAppKit.framework in Frameworks */,
+				A536A9FB23BFE6970011DD7D /* FeatherAppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,9 +109,9 @@
 		C38988C9238494E20019BFF5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C38988C8238494E20019BFF5 /* feather.framework */,
-				A536A9F223BFE6970011DD7D /* featherAppKit.framework */,
-				A536A9FA23BFE6970011DD7D /* featherAppKitTests.xctest */,
+				C38988C8238494E20019BFF5 /* Feather.framework */,
+				A536A9F223BFE6970011DD7D /* FeatherAppKit.framework */,
+				A536A9FA23BFE6970011DD7D /* FeatherAppKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,9 +147,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A536A9F123BFE6970011DD7D /* featherAppKit */ = {
+		A536A9F123BFE6970011DD7D /* FeatherAppKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A536AA0723BFE6970011DD7D /* Build configuration list for PBXNativeTarget "featherAppKit" */;
+			buildConfigurationList = A536AA0723BFE6970011DD7D /* Build configuration list for PBXNativeTarget "FeatherAppKit" */;
 			buildPhases = (
 				A536A9ED23BFE6970011DD7D /* Headers */,
 				A536A9EE23BFE6970011DD7D /* Sources */,
@@ -159,14 +160,14 @@
 			);
 			dependencies = (
 			);
-			name = featherAppKit;
+			name = FeatherAppKit;
 			productName = featherAppKit;
-			productReference = A536A9F223BFE6970011DD7D /* featherAppKit.framework */;
+			productReference = A536A9F223BFE6970011DD7D /* FeatherAppKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A536A9F923BFE6970011DD7D /* featherAppKitTests */ = {
+		A536A9F923BFE6970011DD7D /* FeatherAppKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A536AA0823BFE6970011DD7D /* Build configuration list for PBXNativeTarget "featherAppKitTests" */;
+			buildConfigurationList = A536AA0823BFE6970011DD7D /* Build configuration list for PBXNativeTarget "FeatherAppKitTests" */;
 			buildPhases = (
 				A536A9F623BFE6970011DD7D /* Sources */,
 				A536A9F723BFE6970011DD7D /* Frameworks */,
@@ -177,14 +178,14 @@
 			dependencies = (
 				A536A9FD23BFE6970011DD7D /* PBXTargetDependency */,
 			);
-			name = featherAppKitTests;
+			name = FeatherAppKitTests;
 			productName = featherAppKitTests;
-			productReference = A536A9FA23BFE6970011DD7D /* featherAppKitTests.xctest */;
+			productReference = A536A9FA23BFE6970011DD7D /* FeatherAppKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C38988C7238494E20019BFF5 /* feather */ = {
+		C38988C7238494E20019BFF5 /* Feather */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C38988D0238494E20019BFF5 /* Build configuration list for PBXNativeTarget "feather" */;
+			buildConfigurationList = C38988D0238494E20019BFF5 /* Build configuration list for PBXNativeTarget "Feather" */;
 			buildPhases = (
 				C38988C3238494E20019BFF5 /* Headers */,
 				C38988C4238494E20019BFF5 /* Sources */,
@@ -195,9 +196,9 @@
 			);
 			dependencies = (
 			);
-			name = feather;
+			name = Feather;
 			productName = feather;
-			productReference = C38988C8238494E20019BFF5 /* feather.framework */;
+			productReference = C38988C8238494E20019BFF5 /* Feather.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -221,7 +222,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C38988C2238494E20019BFF5 /* Build configuration list for PBXProject "feather" */;
+			buildConfigurationList = C38988C2238494E20019BFF5 /* Build configuration list for PBXProject "Feather" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -234,9 +235,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C38988C7238494E20019BFF5 /* feather */,
-				A536A9F123BFE6970011DD7D /* featherAppKit */,
-				A536A9F923BFE6970011DD7D /* featherAppKitTests */,
+				C38988C7238494E20019BFF5 /* Feather */,
+				A536A9F123BFE6970011DD7D /* FeatherAppKit */,
+				A536A9F923BFE6970011DD7D /* FeatherAppKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -255,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C350FA9023C004A9005F0CF6 /* FeatherAppKitTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +303,7 @@
 /* Begin PBXTargetDependency section */
 		A536A9FD23BFE6970011DD7D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A536A9F123BFE6970011DD7D /* featherAppKit */;
+			target = A536A9F123BFE6970011DD7D /* FeatherAppKit */;
 			targetProxy = A536A9FC23BFE6970011DD7D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -538,7 +540,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = doug.feather;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Feather;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -562,7 +564,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = doug.feather;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Feather;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -572,7 +574,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A536AA0723BFE6970011DD7D /* Build configuration list for PBXNativeTarget "featherAppKit" */ = {
+		A536AA0723BFE6970011DD7D /* Build configuration list for PBXNativeTarget "FeatherAppKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A536AA0323BFE6970011DD7D /* Debug */,
@@ -581,7 +583,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A536AA0823BFE6970011DD7D /* Build configuration list for PBXNativeTarget "featherAppKitTests" */ = {
+		A536AA0823BFE6970011DD7D /* Build configuration list for PBXNativeTarget "FeatherAppKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A536AA0523BFE6970011DD7D /* Debug */,
@@ -590,7 +592,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C38988C2238494E20019BFF5 /* Build configuration list for PBXProject "feather" */ = {
+		C38988C2238494E20019BFF5 /* Build configuration list for PBXProject "Feather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C38988CE238494E20019BFF5 /* Debug */,
@@ -599,7 +601,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C38988D0238494E20019BFF5 /* Build configuration list for PBXNativeTarget "feather" */ = {
+		C38988D0238494E20019BFF5 /* Build configuration list for PBXNativeTarget "Feather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C38988D1238494E20019BFF5 /* Debug */,
