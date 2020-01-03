@@ -57,14 +57,19 @@ class ViewController: NSViewController {
     }
     
     @objc func didTap() {
-        editView.getHTML { (result) in
-            switch result {
-            case .success(let data):
-                print(data)
-            case .failure(let error):
-                print(error)
-            }
-        }
+        
+        editView.insertHTML(text: "Heres some pretty cool text.")
+        
+        
+        
+//        editView.getHTML { (result) in
+//            switch result {
+//            case .success(let data):
+//                print(data)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
 }
 

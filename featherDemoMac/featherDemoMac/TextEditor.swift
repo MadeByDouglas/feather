@@ -51,7 +51,7 @@ class TextEditor: NSView {
     let js = JSCommands.froala
     
     func getHTML(completion: @escaping StringCompletion) {
-        editorView.runJS(js.cleanHTML) { (result) in
+        editorView.runJS(js.cleanEmptyTags) { (result) in
             switch result {
             case .success(_):
                 self.editorView.runJS(self.js.getHTML) { (result) in
@@ -62,6 +62,16 @@ class TextEditor: NSView {
             }
         }
 
+    }
+    
+    func insertHTML(text: String) {
+        editorView.runJS(js.insertHTML(text: text)) { (result) in
+            switch result {
+            case .success(let html): print(html)
+            case .failure(let error): print(error)
+            }
+        }
+        
     }
     
     func toggleBold() {

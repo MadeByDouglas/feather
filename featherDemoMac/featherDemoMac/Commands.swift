@@ -55,7 +55,7 @@ enum JSCommands {
         }
     }
     
-    var cleanHTML: String {
+    var cleanEmptyTags: String {
         switch self {
         case .froala: return "editor.html.cleanEmptyTags();"
         case .quill: return ""
@@ -72,6 +72,20 @@ enum JSCommands {
     var showToolbar: String {
         switch self {
         case .froala: return "editor.toolbar.show();"
+        case .quill: return ""
+        }
+    }
+    
+    func cleanHTML(text: String) -> String {
+        switch self {
+        case .froala: return "editor.clean.html('\(text)')"
+        case .quill: return ""
+        }
+    }
+    
+    func insertHTML(text: String, clean: Bool = true) -> String {
+        switch self {
+        case .froala: return "editor.html.insert('\(text)', \(clean));"
         case .quill: return ""
         }
     }
