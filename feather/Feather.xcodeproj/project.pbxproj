@@ -12,11 +12,12 @@
 		A536AA0223BFE6970011DD7D /* FeatherAppKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A536A9F423BFE6970011DD7D /* FeatherAppKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C350FA5D23BFF7BF005F0CF6 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */; };
 		C350FA5E23BFF7BF005F0CF6 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */; };
-		C350FA5F23BFF7BF005F0CF6 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5B23BFF7BF005F0CF6 /* Commands.swift */; };
-		C350FA6023BFF7BF005F0CF6 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5B23BFF7BF005F0CF6 /* Commands.swift */; };
+		C350FA5F23BFF7BF005F0CF6 /* JSCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */; };
+		C350FA6023BFF7BF005F0CF6 /* JSCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */; };
 		C350FA6123BFF7BF005F0CF6 /* froala.html in Resources */ = {isa = PBXBuildFile; fileRef = C350FA5C23BFF7BF005F0CF6 /* froala.html */; };
-		C350FA6223BFF7BF005F0CF6 /* froala.html in Resources */ = {isa = PBXBuildFile; fileRef = C350FA5C23BFF7BF005F0CF6 /* froala.html */; };
 		C350FA9023C004A9005F0CF6 /* FeatherAppKitTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = A536A9FA23BFE6970011DD7D /* FeatherAppKitTests.xctest */; };
+		C382812223C0172000969C06 /* quill.html in Resources */ = {isa = PBXBuildFile; fileRef = C3B1CF0323C00E4800A83022 /* quill.html */; };
+		C382812423C0184D00969C06 /* froala.html in Resources */ = {isa = PBXBuildFile; fileRef = C350FA5C23BFF7BF005F0CF6 /* froala.html */; };
 		C38988CD238494E20019BFF5 /* Feather.h in Headers */ = {isa = PBXBuildFile; fileRef = C38988CB238494E20019BFF5 /* Feather.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C3B1CF0423C00E4800A83022 /* quill.html in Resources */ = {isa = PBXBuildFile; fileRef = C3B1CF0323C00E4800A83022 /* quill.html */; };
 /* End PBXBuildFile section */
@@ -39,7 +40,7 @@
 		A536A9FF23BFE6970011DD7D /* FeatherAppKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatherAppKitTests.swift; sourceTree = "<group>"; };
 		A536AA0123BFE6970011DD7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
-		C350FA5B23BFF7BF005F0CF6 /* Commands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
+		C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSCommands.swift; sourceTree = "<group>"; };
 		C350FA5C23BFF7BF005F0CF6 /* froala.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = froala.html; sourceTree = "<group>"; };
 		C38988C8238494E20019BFF5 /* Feather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38988CB238494E20019BFF5 /* Feather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feather.h; sourceTree = "<group>"; };
@@ -95,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */,
-				C350FA5B23BFF7BF005F0CF6 /* Commands.swift */,
+				C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */,
 				C350FA5C23BFF7BF005F0CF6 /* froala.html */,
 				C3B1CF0323C00E4800A83022 /* quill.html */,
 				C38988CA238494E20019BFF5 /* Feather */,
@@ -246,7 +247,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C350FA6223BFF7BF005F0CF6 /* froala.html in Resources */,
+				C382812223C0172000969C06 /* quill.html in Resources */,
+				C382812423C0184D00969C06 /* froala.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C350FA5E23BFF7BF005F0CF6 /* TextEditor.swift in Sources */,
-				C350FA6023BFF7BF005F0CF6 /* Commands.swift in Sources */,
+				C350FA6023BFF7BF005F0CF6 /* JSCommands.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C350FA5D23BFF7BF005F0CF6 /* TextEditor.swift in Sources */,
-				C350FA5F23BFF7BF005F0CF6 /* Commands.swift in Sources */,
+				C350FA5F23BFF7BF005F0CF6 /* JSCommands.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +328,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = doug.featherAppKit;
+				PRODUCT_BUNDLE_IDENTIFIER = doug.feather;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -353,7 +355,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = doug.featherAppKit;
+				PRODUCT_BUNDLE_IDENTIFIER = doug.feather;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;

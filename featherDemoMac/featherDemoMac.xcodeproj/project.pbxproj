@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C382811B23C013CD00969C06 /* FeatherAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A76D2423C0128500E70129 /* FeatherAppKit.framework */; };
-		C382811C23C013CD00969C06 /* FeatherAppKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3A76D2423C0128500E70129 /* FeatherAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C382812023C0159200969C06 /* FeatherAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C382811F23C0159200969C06 /* FeatherAppKit.framework */; };
+		C382812123C0159200969C06 /* FeatherAppKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C382811F23C0159200969C06 /* FeatherAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3C131BC23B18683008648B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C131BB23B18683008648B6 /* AppDelegate.swift */; };
 		C3C131BE23B18683008648B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C131BD23B18683008648B6 /* ViewController.swift */; };
 		C3C131C023B18683008648B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3C131BF23B18683008648B6 /* Assets.xcassets */; };
@@ -22,7 +22,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C382811C23C013CD00969C06 /* FeatherAppKit.framework in Embed Frameworks */,
+				C382812123C0159200969C06 /* FeatherAppKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -30,7 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C3A76D2423C0128500E70129 /* FeatherAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FeatherAppKit.framework; sourceTree = "<group>"; };
+		C382811F23C0159200969C06 /* FeatherAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FeatherAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C131B823B18683008648B6 /* featherDemoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = featherDemoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C131BB23B18683008648B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3C131BD23B18683008648B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,18 +45,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C382811B23C013CD00969C06 /* FeatherAppKit.framework in Frameworks */,
+				C382812023C0159200969C06 /* FeatherAppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C382811E23C0159200969C06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C382811F23C0159200969C06 /* FeatherAppKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C3C131AF23B18683008648B6 = {
 			isa = PBXGroup;
 			children = (
 				C3C131BA23B18683008648B6 /* featherDemoMac */,
 				C3C131B923B18683008648B6 /* Products */,
+				C382811E23C0159200969C06 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,7 +80,6 @@
 		C3C131BA23B18683008648B6 /* featherDemoMac */ = {
 			isa = PBXGroup;
 			children = (
-				C3A76D2423C0128500E70129 /* FeatherAppKit.framework */,
 				C3C131BB23B18683008648B6 /* AppDelegate.swift */,
 				C3C131BD23B18683008648B6 /* ViewController.swift */,
 				C3C131BF23B18683008648B6 /* Assets.xcassets */,
