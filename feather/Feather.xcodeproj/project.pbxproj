@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A504960923C120C3008F3069 /* FeatherTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = A50EAEB123C11DBD000DBF40 /* FeatherTests.xctest */; };
 		A50EAEB423C11DBD000DBF40 /* FeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50EAEB323C11DBD000DBF40 /* FeatherTests.swift */; };
 		A50EAEB623C11DBD000DBF40 /* Feather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38988C8238494E20019BFF5 /* Feather.framework */; };
 		A536A9FB23BFE6970011DD7D /* FeatherAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A536A9F223BFE6970011DD7D /* FeatherAppKit.framework */; };
@@ -308,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A504960923C120C3008F3069 /* FeatherTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
