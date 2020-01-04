@@ -101,6 +101,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A504960B23C1265C008F3069 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A536A9F323BFE6970011DD7D /* FeatherAppKit */,
+				C38988CA238494E20019BFF5 /* Feather */,
+				C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */,
+				C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */,
+				C350FA5C23BFF7BF005F0CF6 /* froala.html */,
+				A585175A23C0518E00F1C1F3 /* froala_editor.pkgd.min.css */,
+				A585175D23C051CE00F1C1F3 /* froala_editor.pkgd.min.js */,
+				C3B1CF0323C00E4800A83022 /* quill.html */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		A50EAEB223C11DBD000DBF40 /* FeatherTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,15 +146,8 @@
 		C38988BE238494E20019BFF5 = {
 			isa = PBXGroup;
 			children = (
-				C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */,
-				C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */,
-				C350FA5C23BFF7BF005F0CF6 /* froala.html */,
-				A585175A23C0518E00F1C1F3 /* froala_editor.pkgd.min.css */,
-				A585175D23C051CE00F1C1F3 /* froala_editor.pkgd.min.js */,
-				C3B1CF0323C00E4800A83022 /* quill.html */,
-				C38988CA238494E20019BFF5 /* Feather */,
+				A504960B23C1265C008F3069 /* Source */,
 				A50EAEB223C11DBD000DBF40 /* FeatherTests */,
-				A536A9F323BFE6970011DD7D /* FeatherAppKit */,
 				A536A9FE23BFE6970011DD7D /* FeatherAppKitTests */,
 				C38988C9238494E20019BFF5 /* Products */,
 			);

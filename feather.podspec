@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
 
   spec.requires_arc = true
   spec.source = { git: "https://github.com/MadeByDouglas/feather.git", tag: "#{spec.version}", submodules: true }
-  spec.source_files = "Feather/**/*.{h,swift}"
+  spec.source_files = "Feather/Source/**/*.{h,swift}"
 
   spec.framework      = 'SystemConfiguration'
   spec.ios.framework  = 'UIKit'
