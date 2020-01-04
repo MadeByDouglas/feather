@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50EAEB423C11DBD000DBF40 /* FeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50EAEB323C11DBD000DBF40 /* FeatherTests.swift */; };
+		A50EAEB623C11DBD000DBF40 /* Feather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38988C8238494E20019BFF5 /* Feather.framework */; };
 		A536A9FB23BFE6970011DD7D /* FeatherAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A536A9F223BFE6970011DD7D /* FeatherAppKit.framework */; };
 		A536AA0023BFE6970011DD7D /* FeatherAppKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A536A9FF23BFE6970011DD7D /* FeatherAppKitTests.swift */; };
 		A536AA0223BFE6970011DD7D /* FeatherAppKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A536A9F423BFE6970011DD7D /* FeatherAppKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A50EAEB723C11DBD000DBF40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C38988BF238494E20019BFF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C38988C7238494E20019BFF5;
+			remoteInfo = Feather;
+		};
 		A536A9FC23BFE6970011DD7D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C38988BF238494E20019BFF5 /* Project object */;
@@ -37,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A50EAEB123C11DBD000DBF40 /* FeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A50EAEB323C11DBD000DBF40 /* FeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatherTests.swift; sourceTree = "<group>"; };
+		A50EAEB523C11DBD000DBF40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A536A9F223BFE6970011DD7D /* FeatherAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatherAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A536A9F423BFE6970011DD7D /* FeatherAppKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatherAppKit.h; sourceTree = "<group>"; };
 		A536A9F523BFE6970011DD7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +67,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A50EAEAE23C11DBD000DBF40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A50EAEB623C11DBD000DBF40 /* Feather.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A536A9EF23BFE6970011DD7D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A50EAEB223C11DBD000DBF40 /* FeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				A50EAEB323C11DBD000DBF40 /* FeatherTests.swift */,
+				A50EAEB523C11DBD000DBF40 /* Info.plist */,
+			);
+			path = FeatherTests;
+			sourceTree = "<group>";
+		};
 		A536A9F323BFE6970011DD7D /* FeatherAppKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +137,7 @@
 				A585175D23C051CE00F1C1F3 /* froala_editor.pkgd.min.js */,
 				C3B1CF0323C00E4800A83022 /* quill.html */,
 				C38988CA238494E20019BFF5 /* Feather */,
+				A50EAEB223C11DBD000DBF40 /* FeatherTests */,
 				A536A9F323BFE6970011DD7D /* FeatherAppKit */,
 				A536A9FE23BFE6970011DD7D /* FeatherAppKitTests */,
 				C38988C9238494E20019BFF5 /* Products */,
@@ -120,6 +150,7 @@
 				C38988C8238494E20019BFF5 /* Feather.framework */,
 				A536A9F223BFE6970011DD7D /* FeatherAppKit.framework */,
 				A536A9FA23BFE6970011DD7D /* FeatherAppKitTests.xctest */,
+				A50EAEB123C11DBD000DBF40 /* FeatherTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +186,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		A50EAEB023C11DBD000DBF40 /* FeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A50EAEB923C11DBD000DBF40 /* Build configuration list for PBXNativeTarget "FeatherTests" */;
+			buildPhases = (
+				A50EAEAD23C11DBD000DBF40 /* Sources */,
+				A50EAEAE23C11DBD000DBF40 /* Frameworks */,
+				A50EAEAF23C11DBD000DBF40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A50EAEB823C11DBD000DBF40 /* PBXTargetDependency */,
+			);
+			name = FeatherTests;
+			productName = FeatherTests;
+			productReference = A50EAEB123C11DBD000DBF40 /* FeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A536A9F123BFE6970011DD7D /* FeatherAppKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A536AA0723BFE6970011DD7D /* Build configuration list for PBXNativeTarget "FeatherAppKit" */;
@@ -219,6 +268,9 @@
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Douglas Hewitt";
 				TargetAttributes = {
+					A50EAEB023C11DBD000DBF40 = {
+						CreatedOnToolsVersion = 11.3;
+					};
 					A536A9F123BFE6970011DD7D = {
 						CreatedOnToolsVersion = 11.3;
 					};
@@ -246,11 +298,19 @@
 				C38988C7238494E20019BFF5 /* Feather */,
 				A536A9F123BFE6970011DD7D /* FeatherAppKit */,
 				A536A9F923BFE6970011DD7D /* FeatherAppKitTests */,
+				A50EAEB023C11DBD000DBF40 /* FeatherTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A50EAEAF23C11DBD000DBF40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A536A9F023BFE6970011DD7D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -284,6 +344,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A50EAEAD23C11DBD000DBF40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A50EAEB423C11DBD000DBF40 /* FeatherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A536A9EE23BFE6970011DD7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,6 +381,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A50EAEB823C11DBD000DBF40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C38988C7238494E20019BFF5 /* Feather */;
+			targetProxy = A50EAEB723C11DBD000DBF40 /* PBXContainerItemProxy */;
+		};
 		A536A9FD23BFE6970011DD7D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A536A9F123BFE6970011DD7D /* FeatherAppKit */;
@@ -321,6 +394,42 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		A50EAEBA23C11DBD000DBF40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68KS6FN57P;
+				INFOPLIST_FILE = FeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.doug.FeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A50EAEBB23C11DBD000DBF40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68KS6FN57P;
+				INFOPLIST_FILE = FeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.doug.FeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		A536AA0323BFE6970011DD7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -590,6 +699,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A50EAEB923C11DBD000DBF40 /* Build configuration list for PBXNativeTarget "FeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A50EAEBA23C11DBD000DBF40 /* Debug */,
+				A50EAEBB23C11DBD000DBF40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A536AA0723BFE6970011DD7D /* Build configuration list for PBXNativeTarget "FeatherAppKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
