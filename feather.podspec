@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
   spec.osx.deployment_target  = '10.15'
 
   spec.requires_arc = true
-  spec.source = { git: "https://github.com/MadeByDouglas/feather.git", tag: "v#{spec.version}", submodules: true }
+  spec.source = { git: "https://github.com/MadeByDouglas/feather.git", tag: "#{spec.version}", submodules: true }
   spec.source_files = "Feather/**/*.{h,swift}"
 
   spec.framework      = 'SystemConfiguration'
