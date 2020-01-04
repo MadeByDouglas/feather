@@ -8,18 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		A536A9FB23BFE6970011DD7D /* FeatherAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A536A9F223BFE6970011DD7D /* FeatherAppKit.framework */; };
-		A536AA0023BFE6970011DD7D /* featherAppKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A536A9FF23BFE6970011DD7D /* featherAppKitTests.swift */; };
-		A536AA0223BFE6970011DD7D /* featherAppKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A536A9F423BFE6970011DD7D /* featherAppKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A536AA0023BFE6970011DD7D /* FeatherAppKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A536A9FF23BFE6970011DD7D /* FeatherAppKitTests.swift */; };
+		A536AA0223BFE6970011DD7D /* FeatherAppKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A536A9F423BFE6970011DD7D /* FeatherAppKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C350FA5D23BFF7BF005F0CF6 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */; };
 		C350FA5E23BFF7BF005F0CF6 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */; };
 		C350FA5F23BFF7BF005F0CF6 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5B23BFF7BF005F0CF6 /* Commands.swift */; };
 		C350FA6023BFF7BF005F0CF6 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5B23BFF7BF005F0CF6 /* Commands.swift */; };
 		C350FA6123BFF7BF005F0CF6 /* froala.html in Resources */ = {isa = PBXBuildFile; fileRef = C350FA5C23BFF7BF005F0CF6 /* froala.html */; };
 		C350FA6223BFF7BF005F0CF6 /* froala.html in Resources */ = {isa = PBXBuildFile; fileRef = C350FA5C23BFF7BF005F0CF6 /* froala.html */; };
-		C350FA6423C000A9005F0CF6 /* quill.html in Resources */ = {isa = PBXBuildFile; fileRef = C350FA6323C000A9005F0CF6 /* quill.html */; };
-		C350FA6523C000A9005F0CF6 /* quill.html in Resources */ = {isa = PBXBuildFile; fileRef = C350FA6323C000A9005F0CF6 /* quill.html */; };
 		C350FA9023C004A9005F0CF6 /* FeatherAppKitTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = A536A9FA23BFE6970011DD7D /* FeatherAppKitTests.xctest */; };
-		C38988CD238494E20019BFF5 /* feather.h in Headers */ = {isa = PBXBuildFile; fileRef = C38988CB238494E20019BFF5 /* feather.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C38988CD238494E20019BFF5 /* Feather.h in Headers */ = {isa = PBXBuildFile; fileRef = C38988CB238494E20019BFF5 /* Feather.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3B1CF0423C00E4800A83022 /* quill.html in Resources */ = {isa = PBXBuildFile; fileRef = C3B1CF0323C00E4800A83022 /* quill.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,18 +33,18 @@
 
 /* Begin PBXFileReference section */
 		A536A9F223BFE6970011DD7D /* FeatherAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatherAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A536A9F423BFE6970011DD7D /* featherAppKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = featherAppKit.h; sourceTree = "<group>"; };
+		A536A9F423BFE6970011DD7D /* FeatherAppKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatherAppKit.h; sourceTree = "<group>"; };
 		A536A9F523BFE6970011DD7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A536A9FA23BFE6970011DD7D /* FeatherAppKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeatherAppKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A536A9FF23BFE6970011DD7D /* featherAppKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = featherAppKitTests.swift; sourceTree = "<group>"; };
+		A536A9FF23BFE6970011DD7D /* FeatherAppKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatherAppKitTests.swift; sourceTree = "<group>"; };
 		A536AA0123BFE6970011DD7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
 		C350FA5B23BFF7BF005F0CF6 /* Commands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 		C350FA5C23BFF7BF005F0CF6 /* froala.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = froala.html; sourceTree = "<group>"; };
-		C350FA6323C000A9005F0CF6 /* quill.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = quill.html; path = ../featherDemoMac/featherDemoMac/quill.html; sourceTree = "<group>"; };
 		C38988C8238494E20019BFF5 /* Feather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C38988CB238494E20019BFF5 /* feather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = feather.h; sourceTree = "<group>"; };
+		C38988CB238494E20019BFF5 /* Feather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feather.h; sourceTree = "<group>"; };
 		C38988CC238494E20019BFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3B1CF0323C00E4800A83022 /* quill.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = quill.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,22 +73,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A536A9F323BFE6970011DD7D /* featherAppKit */ = {
+		A536A9F323BFE6970011DD7D /* FeatherAppKit */ = {
 			isa = PBXGroup;
 			children = (
-				A536A9F423BFE6970011DD7D /* featherAppKit.h */,
+				A536A9F423BFE6970011DD7D /* FeatherAppKit.h */,
 				A536A9F523BFE6970011DD7D /* Info.plist */,
 			);
-			path = featherAppKit;
+			path = FeatherAppKit;
 			sourceTree = "<group>";
 		};
-		A536A9FE23BFE6970011DD7D /* featherAppKitTests */ = {
+		A536A9FE23BFE6970011DD7D /* FeatherAppKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				A536A9FF23BFE6970011DD7D /* featherAppKitTests.swift */,
+				A536A9FF23BFE6970011DD7D /* FeatherAppKitTests.swift */,
 				A536AA0123BFE6970011DD7D /* Info.plist */,
 			);
-			path = featherAppKitTests;
+			path = FeatherAppKitTests;
 			sourceTree = "<group>";
 		};
 		C38988BE238494E20019BFF5 = {
@@ -98,10 +97,10 @@
 				C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */,
 				C350FA5B23BFF7BF005F0CF6 /* Commands.swift */,
 				C350FA5C23BFF7BF005F0CF6 /* froala.html */,
-				C350FA6323C000A9005F0CF6 /* quill.html */,
-				C38988CA238494E20019BFF5 /* feather */,
-				A536A9F323BFE6970011DD7D /* featherAppKit */,
-				A536A9FE23BFE6970011DD7D /* featherAppKitTests */,
+				C3B1CF0323C00E4800A83022 /* quill.html */,
+				C38988CA238494E20019BFF5 /* Feather */,
+				A536A9F323BFE6970011DD7D /* FeatherAppKit */,
+				A536A9FE23BFE6970011DD7D /* FeatherAppKitTests */,
 				C38988C9238494E20019BFF5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,13 +115,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C38988CA238494E20019BFF5 /* feather */ = {
+		C38988CA238494E20019BFF5 /* Feather */ = {
 			isa = PBXGroup;
 			children = (
-				C38988CB238494E20019BFF5 /* feather.h */,
+				C38988CB238494E20019BFF5 /* Feather.h */,
 				C38988CC238494E20019BFF5 /* Info.plist */,
 			);
-			path = feather;
+			path = Feather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,7 +131,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A536AA0223BFE6970011DD7D /* featherAppKit.h in Headers */,
+				A536AA0223BFE6970011DD7D /* FeatherAppKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +139,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C38988CD238494E20019BFF5 /* feather.h in Headers */,
+				C38988CD238494E20019BFF5 /* Feather.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +246,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C350FA6523C000A9005F0CF6 /* quill.html in Resources */,
 				C350FA6223BFF7BF005F0CF6 /* froala.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,7 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C350FA6423C000A9005F0CF6 /* quill.html in Resources */,
+				C3B1CF0423C00E4800A83022 /* quill.html in Resources */,
 				C350FA6123BFF7BF005F0CF6 /* froala.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,7 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A536AA0023BFE6970011DD7D /* featherAppKitTests.swift in Sources */,
+				A536AA0023BFE6970011DD7D /* FeatherAppKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +310,7 @@
 		A536AA0323BFE6970011DD7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -319,7 +318,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = featherAppKit/Info.plist;
+				INFOPLIST_FILE = FeatherAppKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -338,6 +337,7 @@
 		A536AA0423BFE6970011DD7D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -345,7 +345,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = featherAppKit/Info.plist;
+				INFOPLIST_FILE = FeatherAppKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -368,7 +368,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 68KS6FN57P;
-				INFOPLIST_FILE = featherAppKitTests/Info.plist;
+				INFOPLIST_FILE = FeatherAppKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -389,7 +389,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 68KS6FN57P;
-				INFOPLIST_FILE = featherAppKitTests/Info.plist;
+				INFOPLIST_FILE = FeatherAppKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -526,13 +526,14 @@
 		C38988D1238494E20019BFF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 68KS6FN57P;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = feather/Info.plist;
+				INFOPLIST_FILE = Feather/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -550,13 +551,14 @@
 		C38988D2238494E20019BFF5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 68KS6FN57P;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = feather/Info.plist;
+				INFOPLIST_FILE = Feather/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

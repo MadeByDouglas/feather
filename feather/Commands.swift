@@ -1,6 +1,6 @@
 //
 //  Commands.swift
-//  featherDemoMac
+//  FeatherDemoMac
 //
 //  Created by Douglas Hewitt on 1/2/20.
 //  Copyright © 2020 Douglas Hewitt. All rights reserved.

@@ -7,15 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C350FA5323BE72AD005F0CF6 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5223BE72AD005F0CF6 /* Commands.swift */; };
+		C382811B23C013CD00969C06 /* FeatherAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A76D2423C0128500E70129 /* FeatherAppKit.framework */; };
+		C382811C23C013CD00969C06 /* FeatherAppKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3A76D2423C0128500E70129 /* FeatherAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3C131BC23B18683008648B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C131BB23B18683008648B6 /* AppDelegate.swift */; };
 		C3C131BE23B18683008648B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C131BD23B18683008648B6 /* ViewController.swift */; };
 		C3C131C023B18683008648B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3C131BF23B18683008648B6 /* Assets.xcassets */; };
 		C3C131C323B18683008648B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3C131C123B18683008648B6 /* Main.storyboard */; };
-		C3C131CE23B18695008648B6 /* quill.html in Resources */ = {isa = PBXBuildFile; fileRef = C3C131CB23B18695008648B6 /* quill.html */; };
-		C3C131CF23B18695008648B6 /* editor.html in Resources */ = {isa = PBXBuildFile; fileRef = C3C131CC23B18695008648B6 /* editor.html */; };
-		C3C131D023B18695008648B6 /* froala.html in Resources */ = {isa = PBXBuildFile; fileRef = C3C131CD23B18695008648B6 /* froala.html */; };
-		C3C131D223B1869F008648B6 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C131D123B1869F008648B6 /* TextEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +22,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				C382811C23C013CD00969C06 /* FeatherAppKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,7 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C350FA5223BE72AD005F0CF6 /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
+		C3A76D2423C0128500E70129 /* FeatherAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FeatherAppKit.framework; sourceTree = "<group>"; };
 		C3C131B823B18683008648B6 /* featherDemoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = featherDemoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C131BB23B18683008648B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3C131BD23B18683008648B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,10 +38,6 @@
 		C3C131C223B18683008648B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3C131C423B18683008648B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3C131C523B18683008648B6 /* featherDemoMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = featherDemoMac.entitlements; sourceTree = "<group>"; };
-		C3C131CB23B18695008648B6 /* quill.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = quill.html; sourceTree = "<group>"; };
-		C3C131CC23B18695008648B6 /* editor.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = editor.html; sourceTree = "<group>"; };
-		C3C131CD23B18695008648B6 /* froala.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = froala.html; sourceTree = "<group>"; };
-		C3C131D123B1869F008648B6 /* TextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C382811B23C013CD00969C06 /* FeatherAppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,13 +71,9 @@
 		C3C131BA23B18683008648B6 /* featherDemoMac */ = {
 			isa = PBXGroup;
 			children = (
+				C3A76D2423C0128500E70129 /* FeatherAppKit.framework */,
 				C3C131BB23B18683008648B6 /* AppDelegate.swift */,
 				C3C131BD23B18683008648B6 /* ViewController.swift */,
-				C3C131D123B1869F008648B6 /* TextEditor.swift */,
-				C350FA5223BE72AD005F0CF6 /* Commands.swift */,
-				C3C131CC23B18695008648B6 /* editor.html */,
-				C3C131CD23B18695008648B6 /* froala.html */,
-				C3C131CB23B18695008648B6 /* quill.html */,
 				C3C131BF23B18683008648B6 /* Assets.xcassets */,
 				C3C131C123B18683008648B6 /* Main.storyboard */,
 				C3C131C423B18683008648B6 /* Info.plist */,
@@ -151,9 +142,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3C131C023B18683008648B6 /* Assets.xcassets in Resources */,
-				C3C131D023B18695008648B6 /* froala.html in Resources */,
-				C3C131CF23B18695008648B6 /* editor.html in Resources */,
-				C3C131CE23B18695008648B6 /* quill.html in Resources */,
 				C3C131C323B18683008648B6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,9 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3C131BE23B18683008648B6 /* ViewController.swift in Sources */,
-				C3C131D223B1869F008648B6 /* TextEditor.swift in Sources */,
 				C3C131BC23B18683008648B6 /* AppDelegate.swift in Sources */,
-				C350FA5323BE72AD005F0CF6 /* Commands.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +295,11 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 68KS6FN57P;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/featherDemoMac",
+				);
 				INFOPLIST_FILE = featherDemoMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -330,6 +321,11 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 68KS6FN57P;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/featherDemoMac",
+				);
 				INFOPLIST_FILE = featherDemoMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

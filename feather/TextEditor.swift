@@ -9,18 +9,26 @@
 import Foundation
 import WebKit
 
-typealias DataTaskResult = Swift.Result<(URLResponse, Data), Error>
-typealias DataTaskCompletion = (DataTaskResult) -> Void
+public typealias DataTaskResult = Swift.Result<(URLResponse, Data), Error>
+public typealias DataTaskCompletion = (DataTaskResult) -> Void
 
-typealias StringResult = Swift.Result<String, Error>
-typealias StringCompletion = (StringResult) -> Void
+public typealias StringResult = Swift.Result<String, Error>
+public typealias StringCompletion = (StringResult) -> Void
 
-class TextEditor: WKWebView {
+public enum EditorType {
+    case froala
+    case quill
+}
+
+public class TextEditor: WKWebView {
     var js: JSCommands!
     
-    init(commands: JSCommands, frame: CGRect, configuration: WKWebViewConfiguration) {
+    public init(type: EditorType, frame: CGRect, configuration: WKWebViewConfiguration = WKWebViewConfiguration()) {
         super.init(frame: frame, configuration: configuration)
-        js = commands
+        switch type {
+        case .froala: js = JSCommands.froala
+        case .quill: js = JSCommands.quill
+        }
         loadJS()
     }
     
@@ -54,7 +62,7 @@ class TextEditor: WKWebView {
         }
     }
     
-    func getHTML(completion: @escaping StringCompletion) {
+    public func getHTML(completion: @escaping StringCompletion) {
         runJS(js.cleanEmptyTags) { (result) in
             switch result {
             case .success(_):
@@ -68,7 +76,7 @@ class TextEditor: WKWebView {
 
     }
     
-    func insertHTML(text: String) {
+    public func insertHTML(text: String) {
         runJS(js.insertHTML(text: text)) { (result) in
             switch result {
             case .success(let html): print(html)
@@ -78,27 +86,27 @@ class TextEditor: WKWebView {
         
     }
     
-    func toggleBold() {
+    public func toggleBold() {
         runJS(js.bold)
     }
     
-    func toggleItalic() {
+    public func toggleItalic() {
         runJS(js.italic)
     }
     
-    func toggleUnderline() {
+    public func toggleUnderline() {
         runJS(js.underline)
     }
     
-    func increaseIndent() {
+    public func increaseIndent() {
         runJS(js.indent)
     }
     
-    func reduceIndent() {
+    public func reduceIndent() {
         runJS(js.outdent)
     }
     
-    func hideToolBar() {
+    public func hideToolBar() {
         runJS(js.showToolbar)
     }
 }
@@ -127,11 +135,11 @@ extension TextEditor: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         becomeFirstResponder()
     }
     
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         //TODO: Any message handling from scripts to be done here
     }
     

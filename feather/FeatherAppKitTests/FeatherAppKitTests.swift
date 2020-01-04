@@ -1,15 +1,15 @@
 //
-//  featherAppKitTests.swift
-//  featherAppKitTests
+//  FeatherAppKitTests.swift
+//  FeatherAppKitTests
 //
 //  Created by Douglas Hewitt on 1/3/20.
 //  Copyright © 2020 Douglas Hewitt. All rights reserved.
 //
 
 import XCTest
-@testable import featherAppKit
+@testable import FeatherAppKit
 
-class featherAppKitTests: XCTestCase {
+class FeatherAppKitTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

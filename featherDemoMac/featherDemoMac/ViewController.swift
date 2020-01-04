@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import FeatherAppKit
 
 class ViewController: NSViewController {
 
@@ -36,9 +37,8 @@ class ViewController: NSViewController {
     
     func setup() {
         
-        editView = TextEditor(frame: .zero)
+        editView = TextEditor(type: .froala, frame: .zero)
         editView.translatesAutoresizingMaskIntoConstraints = false
-        editView.hideToolBar()
         let button = NSButton(title: "Get HTML", target: self, action: #selector(didTap))
         
         stack = NSStackView(views: [editView, button])
