@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import Feather
 
 final class TextEditorController: UIViewController, UITextViewDelegate {
     
@@ -30,10 +31,10 @@ final class TextEditorController: UIViewController, UITextViewDelegate {
         
         #endif
         
-        editView = TextEditor(frame: .zero)
+        editView = TextEditor(type: .froala, frame: .zero)
         editView.translatesAutoresizingMaskIntoConstraints = false
                 
-        sourceView = TextEditor(frame: .zero)
+        sourceView = TextEditor(type: .froala, frame: .zero)
         sourceView.translatesAutoresizingMaskIntoConstraints = false
 
 

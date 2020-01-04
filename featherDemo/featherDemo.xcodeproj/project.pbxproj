@@ -7,16 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C36D1B3423AAD5D500803DA8 /* quillTest.html in Resources */ = {isa = PBXBuildFile; fileRef = C36D1B3323AAD5D500803DA8 /* quillTest.html */; };
-		C377F94A23AAF729004F005F /* froala.html in Resources */ = {isa = PBXBuildFile; fileRef = C377F94923AAF729004F005F /* froala.html */; };
+		C36AFFD023C01D3300B33948 /* Feather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36AFFCF23C01D3300B33948 /* Feather.framework */; };
+		C36AFFD123C01D3300B33948 /* Feather.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C36AFFCF23C01D3300B33948 /* Feather.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C38988E0238495420019BFF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38988DF238495420019BFF5 /* AppDelegate.swift */; };
 		C38988E2238495420019BFF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38988E1238495420019BFF5 /* SceneDelegate.swift */; };
-		C38988E4238495420019BFF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38988E3238495420019BFF5 /* ViewController.swift */; };
 		C38988E7238495420019BFF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38988E5238495420019BFF5 /* Main.storyboard */; };
 		C38988E9238495430019BFF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C38988E8238495430019BFF5 /* Assets.xcassets */; };
 		C38988EC238495430019BFF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38988EA238495430019BFF5 /* LaunchScreen.storyboard */; };
-		C38988F5238495820019BFF5 /* FeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38988F4238495820019BFF5 /* FeatherView.swift */; };
-		C38988F72384960C0019BFF5 /* RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38988F62384960C0019BFF5 /* RenderView.swift */; };
 		C3898901238497000019BFF5 /* TextTouchbar Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38988FB238497000019BFF5 /* TextTouchbar Helpers.swift */; };
 		C3898902238497000019BFF5 /* TextTouchbarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38988FC238497000019BFF5 /* TextTouchbarManager.swift */; };
 		C3898903238497000019BFF5 /* TextToolbarTouchbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38988FD238497000019BFF5 /* TextToolbarTouchbar.swift */; };
@@ -24,25 +21,33 @@
 		C3898905238497000019BFF5 /* Text Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38988FF238497000019BFF5 /* Text Helpers.swift */; };
 		C3898906238497000019BFF5 /* TextToolbarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3898900238497000019BFF5 /* TextToolbarManager.swift */; };
 		C389890B238497390019BFF5 /* TextFormatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3898907238497390019BFF5 /* TextFormatView.swift */; };
-		C389890C238497390019BFF5 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3898908238497390019BFF5 /* TextEditor.swift */; };
 		C389890E238497390019BFF5 /* TextEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C389890A238497390019BFF5 /* TextEditorController.swift */; };
-		C3898910238497630019BFF5 /* editor.html in Resources */ = {isa = PBXBuildFile; fileRef = C389890F238497630019BFF5 /* editor.html */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C36AFFD223C01D3400B33948 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C36AFFD123C01D3300B33948 /* Feather.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		C36D1B3323AAD5D500803DA8 /* quillTest.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = quillTest.html; sourceTree = "<group>"; };
-		C377F94923AAF729004F005F /* froala.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = froala.html; sourceTree = "<group>"; };
+		C36AFFCF23C01D3300B33948 /* Feather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Feather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38988DC238495420019BFF5 /* featherDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = featherDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38988DF238495420019BFF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C38988E1238495420019BFF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C38988E3238495420019BFF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C38988E6238495420019BFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C38988E8238495430019BFF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C38988EB238495430019BFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C38988ED238495430019BFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C38988F32384954A0019BFF5 /* featherDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = featherDemo.entitlements; sourceTree = "<group>"; };
-		C38988F4238495820019BFF5 /* FeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatherView.swift; sourceTree = "<group>"; };
-		C38988F62384960C0019BFF5 /* RenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderView.swift; sourceTree = "<group>"; };
 		C38988FB238497000019BFF5 /* TextTouchbar Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextTouchbar Helpers.swift"; sourceTree = "<group>"; };
 		C38988FC238497000019BFF5 /* TextTouchbarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTouchbarManager.swift; sourceTree = "<group>"; };
 		C38988FD238497000019BFF5 /* TextToolbarTouchbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToolbarTouchbar.swift; sourceTree = "<group>"; };
@@ -50,9 +55,7 @@
 		C38988FF238497000019BFF5 /* Text Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Text Helpers.swift"; sourceTree = "<group>"; };
 		C3898900238497000019BFF5 /* TextToolbarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToolbarManager.swift; sourceTree = "<group>"; };
 		C3898907238497390019BFF5 /* TextFormatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFormatView.swift; sourceTree = "<group>"; };
-		C3898908238497390019BFF5 /* TextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
 		C389890A238497390019BFF5 /* TextEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditorController.swift; sourceTree = "<group>"; };
-		C389890F238497630019BFF5 /* editor.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = editor.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +63,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C36AFFD023C01D3300B33948 /* Feather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C36AFFCE23C01D3300B33948 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C36AFFCF23C01D3300B33948 /* Feather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C38988D3238495420019BFF5 = {
 			isa = PBXGroup;
 			children = (
 				C38988DE238495420019BFF5 /* featherDemo */,
 				C38988DD238495420019BFF5 /* Products */,
+				C36AFFCE23C01D3300B33948 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,14 +101,7 @@
 				C38988F32384954A0019BFF5 /* featherDemo.entitlements */,
 				C38988DF238495420019BFF5 /* AppDelegate.swift */,
 				C38988E1238495420019BFF5 /* SceneDelegate.swift */,
-				C38988E3238495420019BFF5 /* ViewController.swift */,
-				C38988F4238495820019BFF5 /* FeatherView.swift */,
-				C38988F62384960C0019BFF5 /* RenderView.swift */,
 				C38988F9238497000019BFF5 /* Mac Catalyst Toolbar */,
-				C389890F238497630019BFF5 /* editor.html */,
-				C36D1B3323AAD5D500803DA8 /* quillTest.html */,
-				C377F94923AAF729004F005F /* froala.html */,
-				C3898908238497390019BFF5 /* TextEditor.swift */,
 				C389890A238497390019BFF5 /* TextEditorController.swift */,
 				C3898907238497390019BFF5 /* TextFormatView.swift */,
 				C38988E5238495420019BFF5 /* Main.storyboard */,
@@ -137,6 +143,7 @@
 				C38988D8238495420019BFF5 /* Sources */,
 				C38988D9238495420019BFF5 /* Frameworks */,
 				C38988DA238495420019BFF5 /* Resources */,
+				C36AFFD223C01D3400B33948 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,9 +194,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38988EC238495430019BFF5 /* LaunchScreen.storyboard in Resources */,
-				C377F94A23AAF729004F005F /* froala.html in Resources */,
-				C3898910238497630019BFF5 /* editor.html in Resources */,
-				C36D1B3423AAD5D500803DA8 /* quillTest.html in Resources */,
 				C38988E9238495430019BFF5 /* Assets.xcassets in Resources */,
 				C38988E7238495420019BFF5 /* Main.storyboard in Resources */,
 			);
@@ -202,15 +206,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C38988E4238495420019BFF5 /* ViewController.swift in Sources */,
 				C3898902238497000019BFF5 /* TextTouchbarManager.swift in Sources */,
-				C389890C238497390019BFF5 /* TextEditor.swift in Sources */,
 				C38988E0238495420019BFF5 /* AppDelegate.swift in Sources */,
-				C38988F5238495820019BFF5 /* FeatherView.swift in Sources */,
 				C3898906238497000019BFF5 /* TextToolbarManager.swift in Sources */,
 				C3898903238497000019BFF5 /* TextToolbarTouchbar.swift in Sources */,
 				C3898901238497000019BFF5 /* TextTouchbar Helpers.swift in Sources */,
-				C38988F72384960C0019BFF5 /* RenderView.swift in Sources */,
 				C389890B238497390019BFF5 /* TextFormatView.swift in Sources */,
 				C3898905238497000019BFF5 /* Text Helpers.swift in Sources */,
 				C3898904238497000019BFF5 /* TextToolbar.swift in Sources */,
