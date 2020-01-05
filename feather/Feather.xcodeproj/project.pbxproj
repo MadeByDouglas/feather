@@ -13,20 +13,20 @@
 		A536A9FB23BFE6970011DD7D /* FeatherAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A536A9F223BFE6970011DD7D /* FeatherAppKit.framework */; };
 		A536AA0023BFE6970011DD7D /* FeatherAppKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A536A9FF23BFE6970011DD7D /* FeatherAppKitTests.swift */; };
 		A536AA0223BFE6970011DD7D /* FeatherAppKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A536A9F423BFE6970011DD7D /* FeatherAppKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A585175B23C0518E00F1C1F3 /* froala_editor.pkgd.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A585175A23C0518E00F1C1F3 /* froala_editor.pkgd.min.css */; };
-		A585175C23C0518E00F1C1F3 /* froala_editor.pkgd.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A585175A23C0518E00F1C1F3 /* froala_editor.pkgd.min.css */; };
-		A585175E23C051CE00F1C1F3 /* froala_editor.pkgd.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A585175D23C051CE00F1C1F3 /* froala_editor.pkgd.min.js */; };
-		A585175F23C051CE00F1C1F3 /* froala_editor.pkgd.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A585175D23C051CE00F1C1F3 /* froala_editor.pkgd.min.js */; };
+		A595AB7E23C2A55200C4DA12 /* froala.html in Resources */ = {isa = PBXBuildFile; fileRef = A595AB7A23C2A55200C4DA12 /* froala.html */; };
+		A595AB7F23C2A55200C4DA12 /* froala.html in Resources */ = {isa = PBXBuildFile; fileRef = A595AB7A23C2A55200C4DA12 /* froala.html */; };
+		A595AB8023C2A55200C4DA12 /* froala_editor.pkgd.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A595AB7B23C2A55200C4DA12 /* froala_editor.pkgd.min.js */; };
+		A595AB8123C2A55200C4DA12 /* froala_editor.pkgd.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A595AB7B23C2A55200C4DA12 /* froala_editor.pkgd.min.js */; };
+		A595AB8223C2A55200C4DA12 /* froala_editor.pkgd.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A595AB7C23C2A55200C4DA12 /* froala_editor.pkgd.min.css */; };
+		A595AB8323C2A55200C4DA12 /* froala_editor.pkgd.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A595AB7C23C2A55200C4DA12 /* froala_editor.pkgd.min.css */; };
+		A595AB8423C2A55200C4DA12 /* quill.html in Resources */ = {isa = PBXBuildFile; fileRef = A595AB7D23C2A55200C4DA12 /* quill.html */; };
+		A595AB8523C2A55200C4DA12 /* quill.html in Resources */ = {isa = PBXBuildFile; fileRef = A595AB7D23C2A55200C4DA12 /* quill.html */; };
 		C350FA5D23BFF7BF005F0CF6 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */; };
 		C350FA5E23BFF7BF005F0CF6 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */; };
 		C350FA5F23BFF7BF005F0CF6 /* JSCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */; };
 		C350FA6023BFF7BF005F0CF6 /* JSCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */; };
-		C350FA6123BFF7BF005F0CF6 /* froala.html in Resources */ = {isa = PBXBuildFile; fileRef = C350FA5C23BFF7BF005F0CF6 /* froala.html */; };
 		C350FA9023C004A9005F0CF6 /* FeatherAppKitTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = A536A9FA23BFE6970011DD7D /* FeatherAppKitTests.xctest */; };
-		C382812223C0172000969C06 /* quill.html in Resources */ = {isa = PBXBuildFile; fileRef = C3B1CF0323C00E4800A83022 /* quill.html */; };
-		C382812423C0184D00969C06 /* froala.html in Resources */ = {isa = PBXBuildFile; fileRef = C350FA5C23BFF7BF005F0CF6 /* froala.html */; };
 		C38988CD238494E20019BFF5 /* Feather.h in Headers */ = {isa = PBXBuildFile; fileRef = C38988CB238494E20019BFF5 /* Feather.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C3B1CF0423C00E4800A83022 /* quill.html in Resources */ = {isa = PBXBuildFile; fileRef = C3B1CF0323C00E4800A83022 /* quill.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,15 +56,15 @@
 		A536A9FA23BFE6970011DD7D /* FeatherAppKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeatherAppKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A536A9FF23BFE6970011DD7D /* FeatherAppKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatherAppKitTests.swift; sourceTree = "<group>"; };
 		A536AA0123BFE6970011DD7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A585175A23C0518E00F1C1F3 /* froala_editor.pkgd.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = froala_editor.pkgd.min.css; sourceTree = "<group>"; };
-		A585175D23C051CE00F1C1F3 /* froala_editor.pkgd.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = froala_editor.pkgd.min.js; sourceTree = "<group>"; };
+		A595AB7A23C2A55200C4DA12 /* froala.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = froala.html; sourceTree = "<group>"; };
+		A595AB7B23C2A55200C4DA12 /* froala_editor.pkgd.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = froala_editor.pkgd.min.js; sourceTree = "<group>"; };
+		A595AB7C23C2A55200C4DA12 /* froala_editor.pkgd.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = froala_editor.pkgd.min.css; sourceTree = "<group>"; };
+		A595AB7D23C2A55200C4DA12 /* quill.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = quill.html; sourceTree = "<group>"; };
 		C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
 		C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSCommands.swift; sourceTree = "<group>"; };
-		C350FA5C23BFF7BF005F0CF6 /* froala.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = froala.html; sourceTree = "<group>"; };
 		C38988C8238494E20019BFF5 /* Feather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38988CB238494E20019BFF5 /* Feather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feather.h; sourceTree = "<group>"; };
 		C38988CC238494E20019BFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3B1CF0323C00E4800A83022 /* quill.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = quill.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,10 +108,6 @@
 				C38988CA238494E20019BFF5 /* Feather */,
 				C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */,
 				C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */,
-				C350FA5C23BFF7BF005F0CF6 /* froala.html */,
-				A585175A23C0518E00F1C1F3 /* froala_editor.pkgd.min.css */,
-				A585175D23C051CE00F1C1F3 /* froala_editor.pkgd.min.js */,
-				C3B1CF0323C00E4800A83022 /* quill.html */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -143,9 +139,21 @@
 			path = FeatherAppKitTests;
 			sourceTree = "<group>";
 		};
+		A595AB7923C2A55200C4DA12 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A595AB7A23C2A55200C4DA12 /* froala.html */,
+				A595AB7B23C2A55200C4DA12 /* froala_editor.pkgd.min.js */,
+				A595AB7C23C2A55200C4DA12 /* froala_editor.pkgd.min.css */,
+				A595AB7D23C2A55200C4DA12 /* quill.html */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C38988BE238494E20019BFF5 = {
 			isa = PBXGroup;
 			children = (
+				A595AB7923C2A55200C4DA12 /* Resources */,
 				A504960B23C1265C008F3069 /* Source */,
 				A50EAEB223C11DBD000DBF40 /* FeatherTests */,
 				A536A9FE23BFE6970011DD7D /* FeatherAppKitTests */,
@@ -325,10 +333,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C382812223C0172000969C06 /* quill.html in Resources */,
-				A585175F23C051CE00F1C1F3 /* froala_editor.pkgd.min.js in Resources */,
-				C382812423C0184D00969C06 /* froala.html in Resources */,
-				A585175C23C0518E00F1C1F3 /* froala_editor.pkgd.min.css in Resources */,
+				A595AB8523C2A55200C4DA12 /* quill.html in Resources */,
+				A595AB7F23C2A55200C4DA12 /* froala.html in Resources */,
+				A595AB8123C2A55200C4DA12 /* froala_editor.pkgd.min.js in Resources */,
+				A595AB8323C2A55200C4DA12 /* froala_editor.pkgd.min.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,10 +352,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3B1CF0423C00E4800A83022 /* quill.html in Resources */,
-				A585175E23C051CE00F1C1F3 /* froala_editor.pkgd.min.js in Resources */,
-				C350FA6123BFF7BF005F0CF6 /* froala.html in Resources */,
-				A585175B23C0518E00F1C1F3 /* froala_editor.pkgd.min.css in Resources */,
+				A595AB8423C2A55200C4DA12 /* quill.html in Resources */,
+				A595AB7E23C2A55200C4DA12 /* froala.html in Resources */,
+				A595AB8023C2A55200C4DA12 /* froala_editor.pkgd.min.js in Resources */,
+				A595AB8223C2A55200C4DA12 /* froala_editor.pkgd.min.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +459,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = FeatherAppKit/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/FeatherAppKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -478,7 +486,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = FeatherAppKit/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/FeatherAppKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -666,7 +674,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Feather/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Feather/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -691,7 +699,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Feather/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Feather/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
