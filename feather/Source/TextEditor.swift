@@ -128,9 +128,9 @@ extension TextEditor: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         navigationDelegate = self
         uiDelegate = self
                 
-        let myBundle = Bundle(identifier: "doug.feather")!
+        let frameworkBundle = Bundle(for: TextEditor.self)
         
-        if let url = myBundle.url(forResource: js.fileName, withExtension: "html") {
+        if let url = frameworkBundle.url(forResource: js.fileName, withExtension: "html") {
             let request = URLRequest(url: url)
             load(request)
         } else {
