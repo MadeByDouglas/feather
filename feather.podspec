@@ -17,10 +17,12 @@ Pod::Spec.new do |spec|
   
   spec.source_files = "Feather/Source/**/*.{h,swift}"
 
+  spec.resources = 'Feather/Resources/**'
+
   spec.resource_bundles = {
-    'Feather' => ['Feather/Resources/**/*']
+    'Feather' => ['Feather/Resources/**']
   }
 
-  spec.framework      = 'SystemConfiguration'
+  spec.framework = 'SystemConfiguration'
   
 end
