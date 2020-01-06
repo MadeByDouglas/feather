@@ -127,6 +127,10 @@ extension TextEditor: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
 
         navigationDelegate = self
         uiDelegate = self
+        print("BUNDLES")
+        print(Bundle.allBundles)
+        print("FRAMEWORK BUNDLES")
+        print(Bundle.allFrameworks)
                 
         let frameworkBundle = Bundle(for: TextEditor.self)
         
