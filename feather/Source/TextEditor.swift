@@ -134,9 +134,21 @@ extension TextEditor: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
             let request = URLRequest(url: url)
             load(request)
         } else {
-            print("url not found")
+            print("source editor not found in bundle, trying another bundle")
+            
+            guard let bundleURL = frameworkBundle.url(forResource: "Feather", withExtension: "bundle") else {return}
+            guard let cocoaPodsBundle = Bundle(url: bundleURL) else {return}
+            
+            loadEditorFromBundle(cocoaPodsBundle)
         }
         
+    }
+    
+    private func loadEditorFromBundle(_ bundle: Bundle) {
+        if let url = bundle.url(forResource: js.fileName, withExtension: "html") {
+            let request = URLRequest(url: url)
+            load(request)
+        }
     }
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
