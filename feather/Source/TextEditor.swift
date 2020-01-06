@@ -140,11 +140,10 @@ extension TextEditor: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         } else {
             print("source editor not found in bundle, trying another bundle")
             
-            guard let bundleURL = frameworkBundle.url(forResource: "Feather", withExtension: "bundle") else {return}
+            guard let bundleURL = Bundle.main.url(forResource: "Feather", withExtension: "bundle") else {return}
             guard let cocoaPodsBundle = Bundle(url: bundleURL) else {return}
             
-//            loadEditorFromBundle(cocoaPodsBundle)
-            loadEditorFromBundle(Bundle.main)
+            loadEditorFromBundle(cocoaPodsBundle)
         }
         
     }
