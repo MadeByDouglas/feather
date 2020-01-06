@@ -127,10 +127,6 @@ extension TextEditor: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
 
         navigationDelegate = self
         uiDelegate = self
-        print("BUNDLES")
-        print(Bundle.allBundles)
-        print("FRAMEWORK BUNDLES")
-        print(Bundle.allFrameworks)
                 
         let frameworkBundle = Bundle(for: TextEditor.self)
         
@@ -138,21 +134,9 @@ extension TextEditor: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
             let request = URLRequest(url: url)
             load(request)
         } else {
-            print("source editor not found in bundle, trying another bundle")
-            
-//            guard let bundleURL = frameworkBundle.url(forResource: "Feather/Feather", withExtension: "bundle") else {return}
-            guard let cocoaPodsBundle = Bundle(identifier: "org.cocoapods.Feather") else {return}
-            
-            loadEditorFromBundle(cocoaPodsBundle)
+            print("source editor not found in bundle")
         }
         
-    }
-    
-    private func loadEditorFromBundle(_ bundle: Bundle) {
-        if let url = bundle.url(forResource: js.fileName, withExtension: "html") {
-            let request = URLRequest(url: url)
-            load(request)
-        }
     }
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
