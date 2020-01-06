@@ -139,7 +139,8 @@ extension TextEditor: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
             guard let bundleURL = frameworkBundle.url(forResource: "Feather", withExtension: "bundle") else {return}
             guard let cocoaPodsBundle = Bundle(url: bundleURL) else {return}
             
-            loadEditorFromBundle(cocoaPodsBundle)
+//            loadEditorFromBundle(cocoaPodsBundle)
+            loadEditorFromBundle(Bundle.main)
         }
         
     }
