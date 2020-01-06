@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import SwiftUI
 import Feather
 
 final class TextEditorController: UIViewController, UITextViewDelegate {
     
 
     var editView: TextEditor!
-    var sourceView: TextEditor!
+    var button: UIButton!
         
     var stack: UIStackView!
     
@@ -34,11 +33,11 @@ final class TextEditorController: UIViewController, UITextViewDelegate {
         editView = TextEditor(type: .froala, frame: .zero)
         editView.translatesAutoresizingMaskIntoConstraints = false
                 
-        sourceView = TextEditor(type: .froala, frame: .zero)
-        sourceView.translatesAutoresizingMaskIntoConstraints = false
+        button = UIButton(type: .contactAdd)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
 
-
-        stack = UIStackView(arrangedSubviews: [editView])
+        stack = UIStackView(arrangedSubviews: [editView, button])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
         stack.alignment = .fill
@@ -55,23 +54,14 @@ final class TextEditorController: UIViewController, UITextViewDelegate {
         ])
         
     }
+    
+    @objc func didTapButton() {
+        editView.insertHTML(text: "here's some text how about this 'text'")
+    }
 
     
     func textViewDidChange(_ textView: UITextView) {
 //        let html = editView.getHTML()
 //        sourceView.editorView.loadHTMLString(html, baseURL: nil)
-    }
-}
-
-extension TextEditorController: UIViewControllerRepresentable {
-    typealias UIViewControllerType = TextEditorController
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<TextEditorController>) -> TextEditorController {
-        let vc = TextEditorController()
-        return vc
-    }
-    
-    func updateUIViewController(_ uiViewController: TextEditorController, context: UIViewControllerRepresentableContext<TextEditorController>) {
-        //do nothing for now
     }
 }
