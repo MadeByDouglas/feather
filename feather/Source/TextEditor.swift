@@ -164,3 +164,16 @@ extension TextEditor: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
     }
     
 }
+
+
+// MARK: - static functions
+extension TextEditor {
+    
+    static func escapeText(text: String) -> String {
+        var escapedText = ""
+        for scalar in text.unicodeScalars {
+            escapedText.append(scalar.escaped(asASCII: true))
+        }
+        return escapedText
+    }
+}
