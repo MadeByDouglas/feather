@@ -28,6 +28,8 @@
 		C350FA9023C004A9005F0CF6 /* FeatherAppKitTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = A536A9FA23BFE6970011DD7D /* FeatherAppKitTests.xctest */; };
 		C352106723C54B620076EEB6 /* fr-view.html in Resources */ = {isa = PBXBuildFile; fileRef = C352106623C54B620076EEB6 /* fr-view.html */; };
 		C352106823C54B620076EEB6 /* fr-view.html in Resources */ = {isa = PBXBuildFile; fileRef = C352106623C54B620076EEB6 /* fr-view.html */; };
+		C358DE1223C6D78500E1E9EC /* TextViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358DE1123C6D78500E1E9EC /* TextViewer.swift */; };
+		C358DE1323C6D78500E1E9EC /* TextViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358DE1123C6D78500E1E9EC /* TextViewer.swift */; };
 		C38988CD238494E20019BFF5 /* Feather.h in Headers */ = {isa = PBXBuildFile; fileRef = C38988CB238494E20019BFF5 /* Feather.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,7 @@
 		C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
 		C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSCommands.swift; sourceTree = "<group>"; };
 		C352106623C54B620076EEB6 /* fr-view.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-view.html"; sourceTree = "<group>"; };
+		C358DE1123C6D78500E1E9EC /* TextViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewer.swift; sourceTree = "<group>"; };
 		C38988C8238494E20019BFF5 /* Feather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38988CB238494E20019BFF5 /* Feather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feather.h; sourceTree = "<group>"; };
 		C38988CC238494E20019BFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 				A536A9F323BFE6970011DD7D /* FeatherAppKit */,
 				C38988CA238494E20019BFF5 /* Feather */,
 				C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */,
+				C358DE1123C6D78500E1E9EC /* TextViewer.swift */,
 				C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */,
 			);
 			path = Source;
@@ -380,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C358DE1323C6D78500E1E9EC /* TextViewer.swift in Sources */,
 				C350FA5E23BFF7BF005F0CF6 /* TextEditor.swift in Sources */,
 				C350FA6023BFF7BF005F0CF6 /* JSCommands.swift in Sources */,
 			);
@@ -397,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C358DE1223C6D78500E1E9EC /* TextViewer.swift in Sources */,
 				C350FA5D23BFF7BF005F0CF6 /* TextEditor.swift in Sources */,
 				C350FA5F23BFF7BF005F0CF6 /* JSCommands.swift in Sources */,
 			);

@@ -13,6 +13,7 @@ final class TextEditorController: UIViewController, UITextViewDelegate {
     
 
     var editView: TextEditor!
+    var viewOnlyView: TextViewer!
     var button: UIButton!
         
     var stack: UIStackView!
@@ -30,14 +31,18 @@ final class TextEditorController: UIViewController, UITextViewDelegate {
         
         #endif
         
-        editView = TextEditor(type: .froala, frame: .zero, viewOnly: false)
+        editView = TextEditor(type: .froala, frame: .zero)
         editView.translatesAutoresizingMaskIntoConstraints = false
+        
+        viewOnlyView = TextViewer(type: .froala, frame: .zero)
+        viewOnlyView.translatesAutoresizingMaskIntoConstraints = false
+
                 
         button = UIButton(type: .contactAdd)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
 
-        stack = UIStackView(arrangedSubviews: [editView, button])
+        stack = UIStackView(arrangedSubviews: [editView, viewOnlyView, button])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
         stack.alignment = .fill
