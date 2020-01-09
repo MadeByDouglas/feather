@@ -7,8 +7,7 @@
     var editor = new FroalaEditor('#editor', {
                                     charCounterCount: false,
                                     placeholderText: '',
-                                    quickInsertEnabled: false,
-                                    heightMin: window.screen.height-144
+                                    quickInsertEnabled: false
 
                                   },
                                   function () {
@@ -20,3 +19,18 @@
 
 <link href="../css/froala_style.min.css" rel="stylesheet" type="text/css" />
 
+<style>
+    .fr-box {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+    }
+
+    .fr-wrapper {
+        flex: 1;
+    }
+
+    .fr-element {
+        min-height: 100%;
+    }
+</style>
