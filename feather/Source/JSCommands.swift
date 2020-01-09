@@ -29,42 +29,42 @@ enum JSCommands {
     var bold: String {
         switch self {
         case .froala: return "editor.commands.bold();"
-        case .quill: return ""
+        case .quill: return "editor.format('bold', true);"
         }
     }
     
     var italic: String {
         switch self {
         case .froala: return "editor.commands.italic();"
-        case .quill: return ""
+        case .quill: return "editor.format('italic', true);"
         }
     }
     
     var underline: String {
         switch self {
         case .froala: return "editor.commands.underline();"
-        case .quill: return ""
+        case .quill: return "editor.format('underline', true);"
         }
     }
     
     var indent: String {
         switch self {
         case .froala: return "editor.commands.indent();"
-        case .quill: return ""
+        case .quill: return "editor.format('indent', true);"
         }
     }
     
     var outdent: String {
         switch self {
         case .froala: return "editor.commands.outdent();"
-        case .quill: return ""
+        case .quill: return "editor.format('outdent', true);"
         }
     }
     
     var getHTML: String {
         switch self {
         case .froala: return "editor.html.get();"
-        case .quill: return ""
+        case .quill: return "editor.getText(0);"
         }
     }
     
@@ -105,7 +105,7 @@ enum JSCommands {
         
         switch self {
         case .froala: return "editor.html.insert('\(escapedText)', \(clean));"
-        case .quill: return ""
+        case .quill: return "editor.setText('\(escapedText)');"
         }
     }
 }
