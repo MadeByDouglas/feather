@@ -23,13 +23,28 @@ public enum EditorType {
 public class TextEditor: WKWebView {
     var js: JSCommands!
     
-    public init(type: EditorType, frame: CGRect, configuration: WKWebViewConfiguration = WKWebViewConfiguration()) {
+    public init(type: EditorType, frame: CGRect, configuration: WKWebViewConfiguration = WKWebViewConfiguration(), viewOnly: Bool = false) {
+        
+        let source: String = "var meta = document.createElement('meta');" +
+            "meta.name = 'viewport';" +
+            "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
+            "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);";
+
+        
+        configuration.userContentController.addUserScript(
+            WKUserScript(source: source,
+                injectionTime: .atDocumentEnd,
+                forMainFrameOnly: true
+            )
+        )
+        
         super.init(frame: frame, configuration: configuration)
         switch type {
         case .froala: js = JSCommands.froala
         case .quill: js = JSCommands.quill
         }
-        loadJS()
+        
+        setup(viewOnly)
     }
     
     required init?(coder: NSCoder) {
@@ -115,30 +130,28 @@ public class TextEditor: WKWebView {
 extension TextEditor: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     
     //MARK: Load Rich Text
-    fileprivate func loadJS() {
-        
-//        let configuration = WKWebViewConfiguration()
-//        configuration.userContentController.addUserScript(
-//            WKUserScript(source: scriptContent,
-//                injectionTime: .atDocumentEnd,
-//                forMainFrameOnly: true
-//            )
-//        )
-
+    private func setup(_ viewOnly: Bool) {
         navigationDelegate = self
         uiDelegate = self
                 
         let frameworkBundle = Bundle(for: TextEditor.self)
         
-        if let url = frameworkBundle.url(forResource: js.fileName, withExtension: "html") {
+        viewOnly ? loadRequest(frameworkBundle, resource: js.viewerName) : loadRequest(frameworkBundle, resource: js.editorName)
+        
+    }
+    
+    private func loadRequest(_ bundle: Bundle, resource: String) {
+        
+        if let url = bundle.url(forResource: resource, withExtension: "html") {
             let request = URLRequest(url: url)
             load(request)
         } else {
-            print("source editor not found in bundle")
+            print("source html file not found in bundle")
         }
         
     }
     
+    //MARK: delegate methods
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         becomeFirstResponder()
     }

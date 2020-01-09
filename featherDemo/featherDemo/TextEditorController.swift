@@ -30,7 +30,7 @@ final class TextEditorController: UIViewController, UITextViewDelegate {
         
         #endif
         
-        editView = TextEditor(type: .froala, frame: .zero)
+        editView = TextEditor(type: .froala, frame: .zero, viewOnly: true)
         editView.translatesAutoresizingMaskIntoConstraints = false
                 
         button = UIButton(type: .contactAdd)
