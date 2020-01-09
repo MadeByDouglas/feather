@@ -1,0 +1,11 @@
+framework module FeatherAppKit {
+  umbrella header "FeatherAppKit.h"
+
+  export *
+  module * { export * }
+}
+
+module FeatherAppKit.Swift {
+    header "FeatherAppKit-Swift.h"
+    requires objc
+}

@@ -1,0 +1,22 @@
+<link href="froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="froala_editor.pkgd.min.js"></script>
+
+<div id="editor" ></div>
+
+<script>
+    var editor = new FroalaEditor('#editor', {
+                                    charCounterCount: false,
+                                    placeholderText: '',
+                                    quickInsertEnabled: false,
+                                    heightMin: window.screen.height-144
+
+                                  },
+                                  function () {
+                                    // editor.toolbar.hide();
+                                  })
+
+
+</script> 
+
+<link href="../css/froala_style.min.css" rel="stylesheet" type="text/css" />
+

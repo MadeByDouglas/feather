@@ -37,7 +37,7 @@ class ViewController: NSViewController {
     
     func setup() {
         
-        editView = TextEditor(type: .froala, frame: .zero)
+        editView = TextEditor(type: .froala, frame: .zero, viewOnly: true)
         editView.translatesAutoresizingMaskIntoConstraints = false
         let button = NSButton(title: "Get HTML", target: self, action: #selector(didTap))
         
