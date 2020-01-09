@@ -7,17 +7,16 @@
     var editor = new FroalaEditor('#editor', {
                                     charCounterCount: false,
                                     placeholderText: '',
-                                    quickInsertEnabled: false
+                                    quickInsertEnabled: false,
+                                    heightMin: window.screen.height-144
+
                                   },
                                   function () {
-<!--                                    editor.toolbar.hide();-->
+                                    // editor.toolbar.hide();
                                   })
 
 
-</script>
+</script> 
 
 <link href="../css/froala_style.min.css" rel="stylesheet" type="text/css" />
 
-<!--<div class="fr-view">-->
-<!--  Here comes the HTML edited with the Froala rich text editor.-->
-<!--</div>-->
