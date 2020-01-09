@@ -12,9 +12,16 @@ enum JSCommands {
     case froala
     case quill
     
-    var fileName: String {
+    var editorName: String {
         switch self {
         case .froala: return "froala"
+        case .quill: return "quill"
+        }
+    }
+    
+    var viewerName: String {
+        switch self {
+        case .froala: return "fr-view"
         case .quill: return "quill"
         }
     }

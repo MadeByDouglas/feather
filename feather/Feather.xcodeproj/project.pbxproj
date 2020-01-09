@@ -26,6 +26,8 @@
 		C350FA5F23BFF7BF005F0CF6 /* JSCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */; };
 		C350FA6023BFF7BF005F0CF6 /* JSCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */; };
 		C350FA9023C004A9005F0CF6 /* FeatherAppKitTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = A536A9FA23BFE6970011DD7D /* FeatherAppKitTests.xctest */; };
+		C352106723C54B620076EEB6 /* fr-view.html in Resources */ = {isa = PBXBuildFile; fileRef = C352106623C54B620076EEB6 /* fr-view.html */; };
+		C352106823C54B620076EEB6 /* fr-view.html in Resources */ = {isa = PBXBuildFile; fileRef = C352106623C54B620076EEB6 /* fr-view.html */; };
 		C38988CD238494E20019BFF5 /* Feather.h in Headers */ = {isa = PBXBuildFile; fileRef = C38988CB238494E20019BFF5 /* Feather.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,7 @@
 		A595AB7D23C2A55200C4DA12 /* quill.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = quill.html; sourceTree = "<group>"; };
 		C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
 		C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSCommands.swift; sourceTree = "<group>"; };
+		C352106623C54B620076EEB6 /* fr-view.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-view.html"; sourceTree = "<group>"; };
 		C38988C8238494E20019BFF5 /* Feather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38988CB238494E20019BFF5 /* Feather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feather.h; sourceTree = "<group>"; };
 		C38988CC238494E20019BFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -142,6 +145,7 @@
 		A595AB7923C2A55200C4DA12 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C352106623C54B620076EEB6 /* fr-view.html */,
 				A595AB7A23C2A55200C4DA12 /* froala.html */,
 				A595AB7B23C2A55200C4DA12 /* froala_editor.pkgd.min.js */,
 				A595AB7C23C2A55200C4DA12 /* froala_editor.pkgd.min.css */,
@@ -335,6 +339,7 @@
 			files = (
 				A595AB8523C2A55200C4DA12 /* quill.html in Resources */,
 				A595AB7F23C2A55200C4DA12 /* froala.html in Resources */,
+				C352106823C54B620076EEB6 /* fr-view.html in Resources */,
 				A595AB8123C2A55200C4DA12 /* froala_editor.pkgd.min.js in Resources */,
 				A595AB8323C2A55200C4DA12 /* froala_editor.pkgd.min.css in Resources */,
 			);
@@ -354,6 +359,7 @@
 			files = (
 				A595AB8423C2A55200C4DA12 /* quill.html in Resources */,
 				A595AB7E23C2A55200C4DA12 /* froala.html in Resources */,
+				C352106723C54B620076EEB6 /* fr-view.html in Resources */,
 				A595AB8023C2A55200C4DA12 /* froala_editor.pkgd.min.js in Resources */,
 				A595AB8223C2A55200C4DA12 /* froala_editor.pkgd.min.css in Resources */,
 			);
