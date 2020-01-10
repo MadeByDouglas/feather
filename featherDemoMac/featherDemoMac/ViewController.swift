@@ -49,7 +49,7 @@ class ViewController: NSViewController {
         let insertButton = NSButton(title: "Editor: Insert HTML", target: self, action: #selector(didTapInsert))
         
         let getButtonViewer = NSButton(title: "Viewer: Get HTML", target: self, action: #selector(didTapGetViewer))
-        let insertButtonViewer = NSButton(title: "Viewer: Insert HTML", target: self, action: #selector(didTapInsertViewer))
+        let insertButtonViewer = NSButton(title: "Viewer: Set HTML", target: self, action: #selector(didTapInsertViewer))
 
         
         let vStack = NSStackView(views: [getButton, insertButton, getButtonViewer, insertButtonViewer])
@@ -100,7 +100,7 @@ class ViewController: NSViewController {
     }
     
     @objc func didTapInsertViewer() {
-        textView.insertHTML(text: savedText)
+        textView.setHTML(text: savedText)
     }
 }
 

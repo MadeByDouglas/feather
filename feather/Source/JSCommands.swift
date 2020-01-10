@@ -100,12 +100,21 @@ enum JSCommands {
     }
     
     func insertHTML(text: String, clean: Bool = true) -> String {
-
         let escapedText = TextEditor.escapeText(text: text)
         
         switch self {
         case .froala: return "editor.html.insert('\(escapedText)', \(clean));"
         case .quill: return "editor.setText('\(escapedText)');"
         }
+    }
+    
+    func setHTML(text: String) -> String {
+        let escapedText = TextEditor.escapeText(text: text)
+        
+        switch self {
+        case .froala: return "editor.html.set('\(escapedText)');"
+        case .quill: return "editor.setText('\(escapedText)');"
+        }
+        
     }
 }
