@@ -79,6 +79,8 @@ public class TextViewer: WKWebView {
         }
     }
     
+    /// Gets HTML from all the content inside the div in the viewer
+    /// - Parameter completion: String completion which gives resulting HTML upon success and error upon failure
     public func getHTML(completion: @escaping StringCompletion) {
         let js = """
             document.getElementById("text").innerHTML
@@ -89,7 +91,9 @@ public class TextViewer: WKWebView {
         
     }
     
-    public func insertHTML(text: String) {
+    /// Replaces all HTML in the viewer div
+    /// - Parameter text: The new HTML to be set
+    public func setHTML(text: String) {
         let html = """
                     <div class="fr-view", id="text">
                     \(text)
