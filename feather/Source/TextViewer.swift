@@ -53,12 +53,59 @@ public class TextViewer: WKWebView {
         super.init(coder: coder)
     }
     
+    func runJS(_ js: String, completion: StringCompletion? = nil) {
+        evaluateJavaScript(js) { (data, error) in
+            
+            guard let completion = completion else { return }
+            
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            
+            if let dataInt = data as? Int {
+                completion(.success("\(dataInt)"))
+                
+            } else if let dataBool = data as? Bool {
+                completion(.success(dataBool ? "true" : "false"))
+
+            } else if let dataString = data as? String {
+                completion(.success(dataString))
+            } else {
+                completion(.success(""))
+            }
+
+        }
+    }
+    
     public func getHTML(completion: @escaping StringCompletion) {
-        //TODO: implement get HTML from div
+        let js = """
+            document.getElementById("text").innerHTML
+            """
+        runJS(js) { (result) in
+            completion(result)
+        }
+        
     }
     
     public func insertHTML(text: String) {
-        //TODO: implement insert HTML to div
+        let html = """
+                    <div class="fr-view", id="text">
+                    \(text)
+                    </div>
+                    <link href="froala_style.min.css" rel="stylesheet" type="text/css" />
+                    <style>
+                        .fr-view {
+                            font-family:    Helvetica, sans-serif;
+                        }
+                    </style>
+                    """
+        
+        let frameworkBundle = Bundle(for: TextViewer.self)
+
+        loadHTMLString(html, baseURL: frameworkBundle.resourceURL)
+        
     }
 }
 
@@ -69,7 +116,7 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         navigationDelegate = self
         uiDelegate = self
                 
-        let frameworkBundle = Bundle(for: TextEditor.self)
+        let frameworkBundle = Bundle(for: TextViewer.self)
         loadRequest(frameworkBundle)
     }
     

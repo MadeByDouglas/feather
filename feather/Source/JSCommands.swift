@@ -61,20 +61,6 @@ enum JSCommands {
         }
     }
     
-    var getHTML: String {
-        switch self {
-        case .froala: return "editor.html.get();"
-        case .quill: return "editor.getText(0);"
-        }
-    }
-    
-    var cleanEmptyTags: String {
-        switch self {
-        case .froala: return "editor.html.cleanEmptyTags();"
-        case .quill: return ""
-        }
-    }
-    
     var hideToolbar: String {
         switch self {
         case .froala: return "editor.toolbar.hide();"
@@ -89,6 +75,13 @@ enum JSCommands {
         }
     }
     
+    var cleanEmptyTags: String {
+        switch self {
+        case .froala: return "editor.html.cleanEmptyTags();"
+        case .quill: return ""
+        }
+    }
+    
     func cleanHTML(text: String) -> String {
         
         let escapedText = TextEditor.escapeText(text: text)
@@ -96,6 +89,13 @@ enum JSCommands {
         switch self {
         case .froala: return "editor.clean.html('\(escapedText)')"
         case .quill: return ""
+        }
+    }
+    
+    var getHTML: String {
+        switch self {
+        case .froala: return "editor.html.get();"
+        case .quill: return "editor.getText(0);"
         }
     }
     

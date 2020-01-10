@@ -31,6 +31,8 @@
 		C358DE1223C6D78500E1E9EC /* TextViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358DE1123C6D78500E1E9EC /* TextViewer.swift */; };
 		C358DE1323C6D78500E1E9EC /* TextViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358DE1123C6D78500E1E9EC /* TextViewer.swift */; };
 		C38988CD238494E20019BFF5 /* Feather.h in Headers */ = {isa = PBXBuildFile; fileRef = C38988CB238494E20019BFF5 /* Feather.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3D9E8A423C9106B00516267 /* froala_style.min.css in Resources */ = {isa = PBXBuildFile; fileRef = C3D9E8A323C9106B00516267 /* froala_style.min.css */; };
+		C3D9E8A523C9106B00516267 /* froala_style.min.css in Resources */ = {isa = PBXBuildFile; fileRef = C3D9E8A323C9106B00516267 /* froala_style.min.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,7 @@
 		C38988C8238494E20019BFF5 /* Feather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38988CB238494E20019BFF5 /* Feather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feather.h; sourceTree = "<group>"; };
 		C38988CC238494E20019BFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3D9E8A323C9106B00516267 /* froala_style.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = froala_style.min.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,7 @@
 				A595AB7A23C2A55200C4DA12 /* froala.html */,
 				A595AB7B23C2A55200C4DA12 /* froala_editor.pkgd.min.js */,
 				A595AB7C23C2A55200C4DA12 /* froala_editor.pkgd.min.css */,
+				C3D9E8A323C9106B00516267 /* froala_style.min.css */,
 				A595AB7D23C2A55200C4DA12 /* quill.html */,
 			);
 			path = Resources;
@@ -343,6 +347,7 @@
 			files = (
 				A595AB8523C2A55200C4DA12 /* quill.html in Resources */,
 				A595AB7F23C2A55200C4DA12 /* froala.html in Resources */,
+				C3D9E8A523C9106B00516267 /* froala_style.min.css in Resources */,
 				C352106823C54B620076EEB6 /* fr-view.html in Resources */,
 				A595AB8123C2A55200C4DA12 /* froala_editor.pkgd.min.js in Resources */,
 				A595AB8323C2A55200C4DA12 /* froala_editor.pkgd.min.css in Resources */,
@@ -363,6 +368,7 @@
 			files = (
 				A595AB8423C2A55200C4DA12 /* quill.html in Resources */,
 				A595AB7E23C2A55200C4DA12 /* froala.html in Resources */,
+				C3D9E8A423C9106B00516267 /* froala_style.min.css in Resources */,
 				C352106723C54B620076EEB6 /* fr-view.html in Resources */,
 				A595AB8023C2A55200C4DA12 /* froala_editor.pkgd.min.js in Resources */,
 				A595AB8223C2A55200C4DA12 /* froala_editor.pkgd.min.css in Resources */,
