@@ -11,9 +11,40 @@
 		C3C131BE23B18683008648B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C131BD23B18683008648B6 /* ViewController.swift */; };
 		C3C131C023B18683008648B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3C131BF23B18683008648B6 /* Assets.xcassets */; };
 		C3C131C323B18683008648B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3C131C123B18683008648B6 /* Main.storyboard */; };
-		C3E5E04A23C6CDB20077891D /* FeatherAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A5EFA223C6CD4A00FB677B /* FeatherAppKit.framework */; };
-		C3E5E04B23C6CDB20077891D /* FeatherAppKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3A5EFA223C6CD4A00FB677B /* FeatherAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C3D9E8A123C90B1B00516267 /* FeatherAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D9E89623C90AC000516267 /* FeatherAppKit.framework */; };
+		C3D9E8A223C90B1B00516267 /* FeatherAppKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3D9E89623C90AC000516267 /* FeatherAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3D9E89323C90AC000516267 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D9E88C23C90AC000516267 /* Feather.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C38988C8238494E20019BFF5;
+			remoteInfo = Feather;
+		};
+		C3D9E89523C90AC000516267 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D9E88C23C90AC000516267 /* Feather.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A536A9F223BFE6970011DD7D;
+			remoteInfo = FeatherAppKit;
+		};
+		C3D9E89723C90AC000516267 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D9E88C23C90AC000516267 /* Feather.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A536A9FA23BFE6970011DD7D;
+			remoteInfo = FeatherAppKitTests;
+		};
+		C3D9E89923C90AC000516267 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D9E88C23C90AC000516267 /* Feather.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A50EAEB123C11DBD000DBF40;
+			remoteInfo = FeatherTests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C350FA8F23C00440005F0CF6 /* Embed Frameworks */ = {
@@ -22,7 +53,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C3E5E04B23C6CDB20077891D /* FeatherAppKit.framework in Embed Frameworks */,
+				C3D9E8A223C90B1B00516267 /* FeatherAppKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -30,7 +61,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C3A5EFA223C6CD4A00FB677B /* FeatherAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FeatherAppKit.framework; sourceTree = "<group>"; };
 		C3C131B823B18683008648B6 /* featherDemoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = featherDemoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C131BB23B18683008648B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3C131BD23B18683008648B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +68,7 @@
 		C3C131C223B18683008648B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3C131C423B18683008648B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3C131C523B18683008648B6 /* featherDemoMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = featherDemoMac.entitlements; sourceTree = "<group>"; };
+		C3D9E88C23C90AC000516267 /* Feather.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Feather.xcodeproj; path = ../feather/Feather.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3E5E04A23C6CDB20077891D /* FeatherAppKit.framework in Frameworks */,
+				C3D9E8A123C90B1B00516267 /* FeatherAppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +86,6 @@
 		C382811E23C0159200969C06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C3A5EFA223C6CD4A00FB677B /* FeatherAppKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -63,6 +93,7 @@
 		C3C131AF23B18683008648B6 = {
 			isa = PBXGroup;
 			children = (
+				C3D9E88C23C90AC000516267 /* Feather.xcodeproj */,
 				C3C131BA23B18683008648B6 /* featherDemoMac */,
 				C3C131B923B18683008648B6 /* Products */,
 				C382811E23C0159200969C06 /* Frameworks */,
@@ -88,6 +119,17 @@
 				C3C131C523B18683008648B6 /* featherDemoMac.entitlements */,
 			);
 			path = featherDemoMac;
+			sourceTree = "<group>";
+		};
+		C3D9E88D23C90AC000516267 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3D9E89423C90AC000516267 /* Feather.framework */,
+				C3D9E89623C90AC000516267 /* FeatherAppKit.framework */,
+				C3D9E89823C90AC000516267 /* FeatherAppKitTests.xctest */,
+				C3D9E89A23C90AC000516267 /* FeatherTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,12 +179,49 @@
 			mainGroup = C3C131AF23B18683008648B6;
 			productRefGroup = C3C131B923B18683008648B6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C3D9E88D23C90AC000516267 /* Products */;
+					ProjectRef = C3D9E88C23C90AC000516267 /* Feather.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C3C131B723B18683008648B6 /* featherDemoMac */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C3D9E89423C90AC000516267 /* Feather.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Feather.framework;
+			remoteRef = C3D9E89323C90AC000516267 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3D9E89623C90AC000516267 /* FeatherAppKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FeatherAppKit.framework;
+			remoteRef = C3D9E89523C90AC000516267 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3D9E89823C90AC000516267 /* FeatherAppKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FeatherAppKitTests.xctest;
+			remoteRef = C3D9E89723C90AC000516267 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3D9E89A23C90AC000516267 /* FeatherTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FeatherTests.xctest;
+			remoteRef = C3D9E89923C90AC000516267 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C3C131B623B18683008648B6 /* Resources */ = {

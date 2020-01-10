@@ -12,8 +12,10 @@ import FeatherAppKit
 class ViewController: NSViewController {
 
     var editView: TextEditor!
+    var textView: TextViewer!
     var stack: NSStackView!
 
+    var savedText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +39,24 @@ class ViewController: NSViewController {
     
     func setup() {
         
-        editView = TextEditor(type: .froala, frame: .zero, viewOnly: true)
+        editView = TextEditor(type: .froala, frame: .zero)
         editView.translatesAutoresizingMaskIntoConstraints = false
-        let button = NSButton(title: "Get HTML", target: self, action: #selector(didTap))
         
-        stack = NSStackView(views: [editView, button])
+        textView = TextViewer(type: .froala, frame: .zero)
+        textView.translatesAutoresizingMaskIntoConstraints = false
+
+        let getButton = NSButton(title: "Editor: Get HTML", target: self, action: #selector(didTapGet))
+        let insertButton = NSButton(title: "Editor: Insert HTML", target: self, action: #selector(didTapInsert))
+        
+        let getButtonViewer = NSButton(title: "Viewer: Get HTML", target: self, action: #selector(didTapGetViewer))
+        let insertButtonViewer = NSButton(title: "Viewer: Insert HTML", target: self, action: #selector(didTapInsertViewer))
+
+        
+        let vStack = NSStackView(views: [getButton, insertButton, getButtonViewer, insertButtonViewer])
+        vStack.orientation = .vertical
+
+        
+        stack = NSStackView(views: [editView, textView, vStack])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
 
@@ -56,20 +71,36 @@ class ViewController: NSViewController {
         
     }
     
-    @objc func didTap() {
-        
-        editView.insertHTML(text: "Heres some pretty cool text.")
-        
-        
-        
-//        editView.getHTML { (result) in
-//            switch result {
-//            case .success(let data):
-//                print(data)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
+    @objc func didTapGet() {
+        editView.getHTML { (result) in
+            switch result {
+            case .success(let data):
+                self.savedText = data
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    @objc func didTapInsert() {
+        editView.insertHTML(text: savedText)
+    }
+    
+    @objc func didTapGetViewer() {
+        textView.getHTML { (result) in
+            switch result {
+            case .success(let data):
+                self.savedText = data
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    @objc func didTapInsertViewer() {
+        textView.insertHTML(text: savedText)
     }
 }
 
