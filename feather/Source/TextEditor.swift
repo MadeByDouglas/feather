@@ -12,6 +12,8 @@ import WebKit
 public class TextEditor: TextViewer {
     override var fileName: String { get { return js.editorName } }
     
+    // MARK: - HTML methods
+    
     /// Gets HTML from all the content inside the editor
     /// - Parameter completion: String completion which gives resulting HTML upon success and error upon failure
     public override func getHTML(completion: @escaping StringCompletion) {
@@ -25,7 +27,6 @@ public class TextEditor: TextViewer {
                 completion(.failure(error))
             }
         }
-
     }
     
     /// Inserts HTML in the editor at the current selection point
@@ -37,7 +38,6 @@ public class TextEditor: TextViewer {
             case .failure(let error): print(error)
             }
         }
-        
     }
 
     /// Replaces all HTML in the editor
@@ -50,6 +50,26 @@ public class TextEditor: TextViewer {
             }
         }
     }
+    
+    // MARK: - Selection methods
+    
+    /// Gets the line of HTML from selection of the editor
+    /// - Parameter completion: String completion which gives resulting HTML upon success and error upon failure
+    public func getSelectedHTML(completion: @escaping StringCompletion) {
+        self.runJS(js.getSelectedHTML) { (result) in
+            completion(result)
+        }
+    }
+    
+    /// Gets plain text from highlighted selection of the editor
+    /// - Parameter completion: String completion which gives resulting HTML upon success and error upon failure
+    public func getSelectedText(completion: @escaping StringCompletion) {
+        self.runJS(js.getSelectedText) { (result) in
+            completion(result)
+        }
+    }
+    
+    // MARK: - Formatting methods
     
     public func toggleBold() {
         runJS(js.bold)
@@ -71,7 +91,4 @@ public class TextEditor: TextViewer {
         runJS(js.outdent)
     }
     
-    public func hideToolBar() {
-        runJS(js.showToolbar)
-    }
 }

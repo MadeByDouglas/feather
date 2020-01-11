@@ -134,6 +134,13 @@ enum JSCommands {
         }
     }
     
+    var getSelectedHTML: String {
+        switch self {
+        case .froala: return "editor.html.getSelected();"
+        case .quill: return ""
+        }
+    }
+    
     func insertHTML(text: String, clean: Bool = true) -> String {
         let escapedText = TextEditor.escapeText(text: text)
         
@@ -149,6 +156,15 @@ enum JSCommands {
         switch self {
         case .froala: return "editor.html.set('\(escapedText)');"
         case .quill: return "editor.setText('\(escapedText)');"
+        }
+    }
+    
+    // MARK: Selection Commands
+    
+    var getSelectedText: String {
+        switch self {
+        case .froala: return "editor.selection.text();"
+        case .quill: return ""
         }
     }
 }
