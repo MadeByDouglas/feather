@@ -79,37 +79,46 @@ public class TextViewer: WKWebView {
         }
     }
     
+    // MARK: HTML methods
+    
     /// Gets HTML from all the content inside the div in the viewer
     /// - Parameter completion: String completion which gives resulting HTML upon success and error upon failure
     public func getHTML(completion: @escaping StringCompletion) {
-        let js = """
-            document.getElementById("text").innerHTML
-            """
-        runJS(js) { (result) in
+        runJS(js.viewerGetHTML) { (result) in
             completion(result)
         }
-        
     }
     
     /// Replaces all HTML in the viewer div
     /// - Parameter text: The new HTML to be set
     public func setHTML(text: String) {
-        let html = """
-                    <div class="fr-view", id="text">
-                    \(text)
-                    </div>
-                    <link href="froala_style.min.css" rel="stylesheet" type="text/css" />
-                    <style>
-                        .fr-view {
-                            font-family:    Helvetica, sans-serif;
-                        }
-                    </style>
-                    """
-        
-        let frameworkBundle = Bundle(for: TextViewer.self)
+        runJS(js.viewerSetHTML(text: text)) { (result) in
+            switch result {
+            case .success(let html): print(html)
+            case .failure(let error): print(error)
+            }
+        }
+    }
+    
+    // MARK: Text methods
 
-        loadHTMLString(html, baseURL: frameworkBundle.resourceURL)
-        
+    /// Gets plain text from all the content inside the div in the viewer
+    /// - Parameter completion: String completion which gives resulting text upon success and error upon failure
+    public func getText(completion: @escaping StringCompletion) {
+        runJS(js.viewerGetText) { (result) in
+            completion(result)
+        }
+    }
+    
+    /// Replaces all HTML in the viewer div
+    /// - Parameter text: The new raw text to be set, will ignore and display HTML tags
+    public func setText(text: String) {
+        runJS(js.viewerSetText(text: text)) { (result) in
+            switch result {
+            case .success(let html): print(html)
+            case .failure(let error): print(error)
+            }
+        }
     }
 }
 

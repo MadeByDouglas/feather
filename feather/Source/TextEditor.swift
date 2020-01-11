@@ -49,7 +49,6 @@ public class TextEditor: TextViewer {
             case .failure(let error): print(error)
             }
         }
-        
     }
     
     public func toggleBold() {

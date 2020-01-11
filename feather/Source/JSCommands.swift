@@ -12,12 +12,8 @@ enum JSCommands {
     case froala
     case quill
     
-    var editorName: String {
-        switch self {
-        case .froala: return "froala"
-        case .quill: return "quill"
-        }
-    }
+    
+    // MARK: - Text Viewer
     
     var viewerName: String {
         switch self {
@@ -25,6 +21,39 @@ enum JSCommands {
         case .quill: return "quill"
         }
     }
+    
+    // MARK: HTML commands
+    
+    var viewerGetHTML: String {
+        return "document.getElementById('viewer').innerHTML;"
+    }
+    
+    func viewerSetHTML(text: String) -> String {
+        let escapedText = TextEditor.escapeText(text: text)
+        return "document.getElementById('viewer').innerHTML = '\(escapedText)';"
+    }
+    
+    // MARK: Plain text commands
+    
+    var viewerGetText: String {
+        return "document.getElementById('viewer').textContent;"
+    }
+    
+    func viewerSetText(text: String) -> String {
+        let escapedText = TextEditor.escapeText(text: text)
+        return "document.getElementById('viewer').textContent = '\(escapedText)';"
+    }
+    
+    // MARK: - Text Editor
+    
+    var editorName: String {
+        switch self {
+        case .froala: return "froala"
+        case .quill: return "quill"
+        }
+    }
+    
+    // MARK: Format commands
     
     var bold: String {
         switch self {
@@ -61,6 +90,8 @@ enum JSCommands {
         }
     }
     
+    // MARK: Toolbar commands
+    
     var hideToolbar: String {
         switch self {
         case .froala: return "editor.toolbar.hide();"
@@ -75,6 +106,8 @@ enum JSCommands {
         }
     }
     
+    // MARK: Clean commands
+    
     var cleanEmptyTags: String {
         switch self {
         case .froala: return "editor.html.cleanEmptyTags();"
@@ -87,10 +120,12 @@ enum JSCommands {
         let escapedText = TextEditor.escapeText(text: text)
         
         switch self {
-        case .froala: return "editor.clean.html('\(escapedText)')"
+        case .froala: return "editor.clean.html('\(escapedText)');"
         case .quill: return ""
         }
     }
+    
+    // MARK: HTML commands
     
     var getHTML: String {
         switch self {
@@ -115,6 +150,5 @@ enum JSCommands {
         case .froala: return "editor.html.set('\(escapedText)');"
         case .quill: return "editor.setText('\(escapedText)');"
         }
-        
     }
 }
