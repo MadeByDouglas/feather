@@ -14,7 +14,9 @@ class ViewController: NSViewController {
     var editView: TextEditor!
     var textView: TextViewer!
     var stack: NSStackView!
-
+    
+    @IBOutlet weak var textViewStoryboard: TextViewer!
+    
     var savedText = ""
     
     override func viewDidLoad() {
@@ -22,6 +24,14 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
 
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+        //MARK: test initial config
+        textViewStoryboard.setHTML(text: "Hello storyboard")
+        textView.setHTML(text: "Hello world")
         
     }
 
@@ -45,6 +55,7 @@ class ViewController: NSViewController {
         textView = TextViewer(type: .froala, frame: .zero)
         textView.translatesAutoresizingMaskIntoConstraints = false
 
+        textViewStoryboard.storyboardInit(.froala)
         
         // MARK: Editort example commands
         
@@ -119,6 +130,7 @@ class ViewController: NSViewController {
     
     @objc func didTapSetViewer() {
         textView.setHTML(text: savedText)
+        textViewStoryboard.setHTML(text: savedText)
     }
     
     @objc func didTapGetViewerText() {
