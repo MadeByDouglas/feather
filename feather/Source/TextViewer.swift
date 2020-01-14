@@ -23,37 +23,32 @@ public enum EditorType {
 public class TextViewer: WKWebView {
     var js: JSCommands!
     var fileName: String { get { return js.viewerName } }
-
+    
+    var commandsToRunWhenReady: [String] = []
     
     public init(type: EditorType, frame: CGRect, configuration: WKWebViewConfiguration = WKWebViewConfiguration()) {
         
-        let source: String = "var meta = document.createElement('meta');" +
-            "meta.name = 'viewport';" +
-            "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
-            "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);";
-
-        
-        configuration.userContentController.addUserScript(
-            WKUserScript(source: source,
-                injectionTime: .atDocumentEnd,
-                forMainFrameOnly: true
-            )
-        )
-        
+        TextViewer.setupWebConfig(configuration)
         super.init(frame: frame, configuration: configuration)
-        switch type {
-        case .froala: js = JSCommands.froala
-        case .quill: js = JSCommands.quill
-        }
-        
-        setup()
+        setupWebView(type)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+        
+    public func storyboardInit(_ type: EditorType) {
+        TextViewer.setupWebConfig(configuration)
+        setupWebView(type)
+    }
     
     func runJS(_ js: String, completion: StringCompletion? = nil) {
+        
+        guard !isLoading else {
+            commandsToRunWhenReady.append(js)
+            return
+        }
+        
         evaluateJavaScript(js) { (data, error) in
             
             guard let completion = completion else { return }
@@ -124,8 +119,14 @@ public class TextViewer: WKWebView {
 
 extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     
-    //MARK: Load Rich Text
-    private func setup() {
+    //MARK: Load Web View
+    private func setupWebView(_ type: EditorType) {
+        
+        switch type {
+        case .froala: js = JSCommands.froala
+        case .quill: js = JSCommands.quill
+        }
+        
         navigationDelegate = self
         uiDelegate = self
                 
@@ -147,6 +148,10 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
     //MARK: delegate methods
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         becomeFirstResponder()
+        for js in commandsToRunWhenReady {
+            runJS(js)
+        }
+        commandsToRunWhenReady = []
     }
     
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -158,6 +163,21 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
 
 // MARK: - static functions
 extension TextViewer {
+    
+    private static func setupWebConfig(_ config: WKWebViewConfiguration) {
+        let source: String = "var meta = document.createElement('meta');" +
+            "meta.name = 'viewport';" +
+            "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
+            "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);";
+
+        
+        config.userContentController.addUserScript(
+            WKUserScript(source: source,
+                injectionTime: .atDocumentEnd,
+                forMainFrameOnly: true
+            )
+        )
+    }
     
     static func escapeText(text: String) -> String {
         var escapedText = ""
