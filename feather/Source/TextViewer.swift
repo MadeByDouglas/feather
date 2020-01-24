@@ -20,9 +20,14 @@ public enum EditorType {
     case quill
 }
 
+public protocol TextViewerDelegate: class {
+    func didTapLink(_ url: URL)
+}
+
 public class TextViewer: WKWebView {
     var js: JSCommands!
     var fileName: String { get { return js.viewerName } }
+    public weak var textDelegate: TextViewerDelegate?
     
     var commandsToRunWhenReady: [String] = []
     
@@ -136,11 +141,28 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
     
     private func loadRequest(_ bundle: Bundle) {
         
-        if let url = bundle.url(forResource: fileName, withExtension: "html") {
-            let request = URLRequest(url: url)
-            load(request)
-        } else {
-            print("source html file not found in bundle")
+        if fileName == js.viewerName {
+            
+                    if let url = bundle.url(forResource: fileName, withExtension: "html") {
+                        let data = try! Data(contentsOf: url)
+                        let baseURL = URL(string: "https:")!
+                        load(data, mimeType: "text/html", characterEncodingName: "UTF-8", baseURL: baseURL)
+                        
+                    } else {
+                        print("source html file not found in bundle")
+                    }
+            
+        } else if fileName == js.editorName {
+            
+                    if let url = bundle.url(forResource: fileName, withExtension: "html") {
+                        let request = URLRequest(url: url)
+                        load(request)
+                        
+
+                    } else {
+                        print("source html file not found in bundle")
+                    }
+
         }
         
     }
@@ -158,6 +180,21 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         //TODO: Any message handling from scripts to be done here
     }
     
+    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+        if navigationAction.navigationType == .linkActivated  {
+            guard let url = navigationAction.request.url else {
+                decisionHandler(.allow)
+                return
+            }
+            textDelegate?.didTapLink(url)
+            decisionHandler(.cancel)
+
+        } else {
+            decisionHandler(.allow)
+        }
+
+    }
 }
 
 
