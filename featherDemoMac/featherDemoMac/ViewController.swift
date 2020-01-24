@@ -31,7 +31,9 @@ class ViewController: NSViewController {
         
         //MARK: test initial config
         textViewStoryboard.setHTML(text: "Hello storyboard")
-        textView.setHTML(text: "Hello world")
+        textView.setHTML(text: """
+<a href="//www.apple.com">www.apple.com</a>
+""")
         
     }
 
@@ -54,6 +56,7 @@ class ViewController: NSViewController {
         
         textView = TextViewer(type: .froala, frame: .zero)
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.textDelegate = self
 
         textViewStoryboard.storyboardInit(.froala)
         
@@ -150,4 +153,8 @@ class ViewController: NSViewController {
     }
 }
 
-
+extension ViewController: TextViewerDelegate {
+    func didTapLink(_ url: URL) {
+        NSWorkspace.shared.open(url)
+    }
+}
