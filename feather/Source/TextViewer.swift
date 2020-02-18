@@ -12,6 +12,9 @@ import WebKit
 public typealias DataTaskResult = Swift.Result<(URLResponse, Data), Error>
 public typealias DataTaskCompletion = (DataTaskResult) -> Void
 
+public typealias DataResult = Swift.Result<Data, Error>
+public typealias DataCompletion = (DataResult) -> Void
+
 public typealias StringResult = Swift.Result<String, Error>
 public typealias StringCompletion = (StringResult) -> Void
 
@@ -31,20 +34,32 @@ public class TextViewer: WKWebView {
     
     var commandsToRunWhenReady: [String] = []
     
-    public init(type: EditorType, frame: CGRect, configuration: WKWebViewConfiguration = WKWebViewConfiguration()) {
-        
-        TextViewer.setupWebConfig(configuration)
+    public init(type: EditorType, key: String = "", frame: CGRect, configuration: WKWebViewConfiguration = WKWebViewConfiguration()) {
         super.init(frame: frame, configuration: configuration)
-        setupWebView(type)
+        setupWebView(type, key: key)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
         
-    public func storyboardInit(_ type: EditorType) {
-        TextViewer.setupWebConfig(configuration)
-        setupWebView(type)
+    public func storyboardInit(_ type: EditorType, key: String = "") {
+        setupWebView(type, key: key)
+    }
+    
+    func runJSData(_ js: String, completion: @escaping DataCompletion) {
+        
+        evaluateJavaScript(js) { (data, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            if let realData = data as? Data {
+                completion(.success(realData))
+                return
+            }
+        }
     }
     
     func runJS(_ js: String, completion: StringCompletion? = nil) {
@@ -125,8 +140,7 @@ public class TextViewer: WKWebView {
 extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     
     //MARK: Load Web View
-    private func setupWebView(_ type: EditorType) {
-        
+    private func setupWebView(_ type: EditorType, key: String) {
         switch type {
         case .froala: js = JSCommands.froala
         case .quill: js = JSCommands.quill
@@ -134,30 +148,107 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         
         navigationDelegate = self
         uiDelegate = self
+        
+        setupWebConfig()
+        if type == .froala {
+            setupFroalaScript(key: key)
+        }
                 
         let frameworkBundle = Bundle(for: TextViewer.self)
         loadRequest(frameworkBundle)
     }
     
+    private func setupWebConfig() {
+        let source: String = "var meta = document.createElement('meta');" +
+            "meta.name = 'viewport';" +
+            "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
+            "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);";
+
+        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        configuration.userContentController.addUserScript(script)
+        
+        // for custom base URLs
+        configuration.setURLSchemeHandler(FeatherSchemeHandler(), forURLScheme: "feather-local")
+        
+        // listener for events
+        configuration.userContentController.add(self, name: js.linkOpen)
+    }
+    
+    private func setupFroalaScript(key: String) {
+        guard fileName == js.editorName else { return }
+
+        let jsString = """
+                    var editor = new FroalaEditor('#editor', {
+                                                    key: "\(key)",
+                                                    attribution: false,
+                                                    charCounterCount: false,
+                                                    placeholderText: '',
+                                                    quickInsertEnabled: false,
+                                                  
+                                                  events: {
+                                                    'commands.after': function (cmd, param1, param2) {
+                                                        // console.log(cmd);
+                                                        // console.log(param1);
+                                                        // console.log(param2);
+                                                        
+                                                        if(cmd == 'linkOpen') {
+                                                            window.webkit.messageHandlers.linkOpen.postMessage(this.selection.element().href);
+                                                        }
+
+                                                    },
+
+                                                    'url.linked': function (link) {
+                                                      // Do something here.
+                                                      // this is the editor instance.
+                                                      // console.log(link);
+                                                    },
+
+                                                    'image.inserted': function ($img, response) {
+                                                      // Do something here.
+                                                      // this is the editor instance.
+                                                      console.log($img);
+                                                      console.log(this);
+                                                    }
+                                                  }
+
+
+                                                  },
+                                                  function () {
+                                                    // editor.toolbar.hide();
+                                                  })
+
+                    """
+
+        let jsScript = WKUserScript(source: jsString, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        configuration.userContentController.addUserScript(jsScript)
+    }
+    
     private func loadRequest(_ bundle: Bundle) {
         
+        
+        
+        
         if fileName == js.viewerName {
+
+            loadHTMLString(froalaView, baseURL: bundle.bundleURL)
             
-                    if let url = bundle.url(forResource: fileName, withExtension: "html") {
-                        let data = try! Data(contentsOf: url)
-                        let baseURL = URL(string: "https:")!
-                        load(data, mimeType: "text/html", characterEncodingName: "UTF-8", baseURL: baseURL)
-                        
-                    } else {
-                        print("source html file not found in bundle")
-                    }
+//                    if let url = bundle.url(forResource: fileName, withExtension: "html") {
+//
+//                        let data = try! Data(contentsOf: url)
+//                        let baseURL = URL(string: "feather-local")!
+//                        load(data, mimeType: "text/html", characterEncodingName: "UTF-8", baseURL: baseURL)
+//
+//                    } else {
+//                        print("source html file not found in bundle")
+//                    }
             
         } else if fileName == js.editorName {
             
+//            loadHTMLString(froalaInit(key: key), baseURL: bundle.bundleURL)
                     if let url = bundle.url(forResource: fileName, withExtension: "html") {
                         let request = URLRequest(url: url)
                         load(request)
-                        
+
 
                     } else {
                         print("source html file not found in bundle")
@@ -170,6 +261,9 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
     //MARK: delegate methods
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         becomeFirstResponder()
+        
+        
+        
         for js in commandsToRunWhenReady {
             runJS(js)
         }
@@ -177,7 +271,18 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
     }
     
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        //TODO: Any message handling from scripts to be done here
+        switch message.name {
+        case js.linkOpen:
+            print(message.body)
+            let messageBody = message.body as! String
+            let url = URL(string: messageBody)!
+            print(url)
+            textDelegate?.didTapLink(url)
+            
+        default:
+            let messageBody = message.body as? String
+            print(messageBody ?? "Unable to parse message body")
+        }
     }
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
@@ -201,26 +306,39 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
 // MARK: - static functions
 extension TextViewer {
     
-    private static func setupWebConfig(_ config: WKWebViewConfiguration) {
-        let source: String = "var meta = document.createElement('meta');" +
-            "meta.name = 'viewport';" +
-            "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
-            "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);";
-
-        
-        config.userContentController.addUserScript(
-            WKUserScript(source: source,
-                injectionTime: .atDocumentEnd,
-                forMainFrameOnly: true
-            )
-        )
-    }
-    
     static func escapeText(text: String) -> String {
         var escapedText = ""
         for scalar in text.unicodeScalars {
             escapedText.append(scalar.escaped(asASCII: true))
         }
         return escapedText
+    }
+}
+
+
+class FeatherSchemeHandler: NSObject, WKURLSchemeHandler {
+    func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
+        
+        
+        let bundle = Bundle(for: TextViewer.self)
+        guard let url = bundle.url(forResource: "fr-view", withExtension: "html") else {
+            return
+        }
+        
+        let data = try! Data(contentsOf: url)
+        
+        let response = URLResponse(
+            url: urlSchemeTask.request.url!,
+            mimeType: "text/html",
+            expectedContentLength: -1,
+            textEncodingName: nil)
+        
+        urlSchemeTask.didReceive(response)
+        urlSchemeTask.didReceive(data)
+        urlSchemeTask.didFinish()
+    }
+    
+    func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
+        // do nothing
     }
 }

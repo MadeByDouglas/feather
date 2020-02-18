@@ -51,20 +51,30 @@ class ViewController: NSViewController {
     
     func setup() {
         
-        editView = TextEditor(type: .froala, frame: .zero)
+        editView = TextEditor(type: .froala, key: "LICENSE_KEY", frame: .zero)
         editView.translatesAutoresizingMaskIntoConstraints = false
+        editView.textDelegate = self
         
         textView = TextViewer(type: .froala, frame: .zero)
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.textDelegate = self
+        textView.widthAnchor.constraint(equalToConstant: 300).isActive = true
 
         textViewStoryboard.storyboardInit(.froala)
         
-        // MARK: Editort example commands
+        // MARK: Editor example commands
         
         let getButton = NSButton(title: "Editor: Get HTML", target: self, action: #selector(didTapGet))
         let setButton = NSButton(title: "Editor: Set HTML", target: self, action: #selector(didTapSet))
         let insertButton = NSButton(title: "Editor: Insert HTML", target: self, action: #selector(didTapInsert))
+        
+        // MARK: email example
+        
+        let emailButton = NSButton(title: "EMAIL Thread", target: self, action: #selector(didTapEmailThread))
+        
+        // MARK: Editor Image and File commands
+        
+        let getImageButton = NSButton(title: "Editor: Get Image", target: self, action: #selector(didTapGetImage))
         
         // MARK: Viewer example commands
         
@@ -78,11 +88,14 @@ class ViewController: NSViewController {
         
         let vStack = NSStackView(views: [getButton, setButton, insertButton, getButtonViewer, setButtonViewer, getButtonViewerText, setButtonViewerText])
         vStack.orientation = .vertical
+        
+        let vStackAttachments = NSStackView(views: [getImageButton, emailButton])
+        vStack.orientation = .vertical
 
         
-        stack = NSStackView(views: [editView, textView, vStack])
+        stack = NSStackView(views: [editView, textView, vStack, vStackAttachments])
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.distribution = .fillEqually
+        stack.distribution = .fillProportionally
 
         view.addSubview(stack)
         
@@ -92,6 +105,26 @@ class ViewController: NSViewController {
             stack.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             stack.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
+    }
+    
+    // MARK: Email Test
+    
+    @objc func didTapEmailThread() {
+        let string1 = "Hello jim how are you"
+        let string2 = "I am fine"
+        let string3 = "How is Joe?"
+        
+        let emails = [string1, string2, string3]
+        
+        for (index, email) in emails.enumerated() {
+            for _ in 0...index {
+                editView.increaseQuote()
+            }
+            editView.insertHTML(text: email)
+            editView.cursorEnter()
+
+        }
         
     }
     
@@ -115,6 +148,19 @@ class ViewController: NSViewController {
     
     @objc func didTapInsert() {
         editView.insertHTML(text: savedText)
+    }
+    
+    // MARK: Editor Image and File Tap responses
+    
+    @objc func didTapGetImage() {
+        editView.getImage { (result) in
+            switch result {
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     // MARK: Viewer tap responses

@@ -30,9 +30,13 @@
 		C352106823C54B620076EEB6 /* fr-view.html in Resources */ = {isa = PBXBuildFile; fileRef = C352106623C54B620076EEB6 /* fr-view.html */; };
 		C358DE1223C6D78500E1E9EC /* TextViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358DE1123C6D78500E1E9EC /* TextViewer.swift */; };
 		C358DE1323C6D78500E1E9EC /* TextViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358DE1123C6D78500E1E9EC /* TextViewer.swift */; };
+		C384FBE123ECADFD001EDE9F /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384FBE023ECADFD001EDE9F /* UIKitExtensions.swift */; };
+		C384FBE423ECAFE8001EDE9F /* AppKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384FBE223ECAFE5001EDE9F /* AppKitExtensions.swift */; };
 		C38988CD238494E20019BFF5 /* Feather.h in Headers */ = {isa = PBXBuildFile; fileRef = C38988CB238494E20019BFF5 /* Feather.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C3D9E8A423C9106B00516267 /* froala_style.min.css in Resources */ = {isa = PBXBuildFile; fileRef = C3D9E8A323C9106B00516267 /* froala_style.min.css */; };
 		C3D9E8A523C9106B00516267 /* froala_style.min.css in Resources */ = {isa = PBXBuildFile; fileRef = C3D9E8A323C9106B00516267 /* froala_style.min.css */; };
+		C3DF973423F7850800D24B1B /* FroalaSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF973323F7850800D24B1B /* FroalaSource.swift */; };
+		C3DF973523F7850800D24B1B /* FroalaSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF973323F7850800D24B1B /* FroalaSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,10 +74,13 @@
 		C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSCommands.swift; sourceTree = "<group>"; };
 		C352106623C54B620076EEB6 /* fr-view.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-view.html"; sourceTree = "<group>"; };
 		C358DE1123C6D78500E1E9EC /* TextViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewer.swift; sourceTree = "<group>"; };
+		C384FBE023ECADFD001EDE9F /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		C384FBE223ECAFE5001EDE9F /* AppKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKitExtensions.swift; sourceTree = "<group>"; };
 		C38988C8238494E20019BFF5 /* Feather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38988CB238494E20019BFF5 /* Feather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feather.h; sourceTree = "<group>"; };
 		C38988CC238494E20019BFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3D9E8A323C9106B00516267 /* froala_style.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = froala_style.min.css; sourceTree = "<group>"; };
+		C3DF973323F7850800D24B1B /* FroalaSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroalaSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +123,11 @@
 				A536A9F323BFE6970011DD7D /* FeatherAppKit */,
 				C38988CA238494E20019BFF5 /* Feather */,
 				C350FA5A23BFF7BF005F0CF6 /* TextEditor.swift */,
+				C3DF973323F7850800D24B1B /* FroalaSource.swift */,
 				C358DE1123C6D78500E1E9EC /* TextViewer.swift */,
 				C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */,
+				C384FBE023ECADFD001EDE9F /* UIKitExtensions.swift */,
+				C384FBE223ECAFE5001EDE9F /* AppKitExtensions.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -392,6 +402,8 @@
 			files = (
 				C358DE1323C6D78500E1E9EC /* TextViewer.swift in Sources */,
 				C350FA5E23BFF7BF005F0CF6 /* TextEditor.swift in Sources */,
+				C384FBE423ECAFE8001EDE9F /* AppKitExtensions.swift in Sources */,
+				C3DF973523F7850800D24B1B /* FroalaSource.swift in Sources */,
 				C350FA6023BFF7BF005F0CF6 /* JSCommands.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +422,8 @@
 			files = (
 				C358DE1223C6D78500E1E9EC /* TextViewer.swift in Sources */,
 				C350FA5D23BFF7BF005F0CF6 /* TextEditor.swift in Sources */,
+				C384FBE123ECADFD001EDE9F /* UIKitExtensions.swift in Sources */,
+				C3DF973423F7850800D24B1B /* FroalaSource.swift in Sources */,
 				C350FA5F23BFF7BF005F0CF6 /* JSCommands.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -76,6 +76,20 @@ enum JSCommands {
         }
     }
     
+    var quoteIncrease: String {
+        switch self {
+        case .froala: return "editor.quote.apply('increase');"
+        case .quill: return ""
+        }
+    }
+    
+    var quoteDecrease: String {
+        switch self {
+        case .froala: return "editor.quote.apply('decrease');"
+        case .quill: return ""
+        }
+    }
+    
     var indent: String {
         switch self {
         case .froala: return "editor.commands.indent();"
@@ -87,6 +101,15 @@ enum JSCommands {
         switch self {
         case .froala: return "editor.commands.outdent();"
         case .quill: return "editor.format('outdent', true);"
+        }
+    }
+    
+    // MARK: Cursor commands
+    
+    var cursorEnter: String {
+        switch self {
+        case .froala: return "editor.cursor.enter(false);"
+        case .quill: return ""
         }
     }
     
@@ -164,6 +187,24 @@ enum JSCommands {
     var getSelectedText: String {
         switch self {
         case .froala: return "editor.selection.text();"
+        case .quill: return ""
+        }
+    }
+    
+    // MARK: Image Commands
+    
+    var getImage: String {
+        switch self {
+        case .froala: return "editor.image.get();"
+        case .quill: return ""
+        }
+    }
+    
+    // MARK: Script Events
+    
+    var linkOpen: String {
+        switch self {
+        case .froala: return "linkOpen"
         case .quill: return ""
         }
     }

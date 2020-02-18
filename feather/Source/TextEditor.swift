@@ -83,12 +83,34 @@ public class TextEditor: TextViewer {
         runJS(js.underline)
     }
     
+    public func increaseQuote() {
+        runJS(js.quoteIncrease)
+    }
+    
+    public func decreaseQuote() {
+        runJS(js.quoteDecrease)
+    }
+    
     public func increaseIndent() {
         runJS(js.indent)
     }
     
     public func reduceIndent() {
         runJS(js.outdent)
+    }
+    
+    // MARK: - Cursor methods
+    
+    public func cursorEnter() {
+        runJS(js.cursorEnter)
+    }
+    
+    // MARK: - Image and File methods
+    
+    public func getImage(completion: @escaping DataCompletion) {
+        runJSData(js.getImage) { (result) in
+            completion(result)
+        }
     }
     
 }
