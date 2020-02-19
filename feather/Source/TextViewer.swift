@@ -224,38 +224,14 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
     }
     
     private func loadRequest(_ bundle: Bundle) {
-        
-        
-        
-        
-        if fileName == js.viewerName {
-
-            loadHTMLString(froalaView, baseURL: bundle.bundleURL)
-            
-//                    if let url = bundle.url(forResource: fileName, withExtension: "html") {
-//
-//                        let data = try! Data(contentsOf: url)
-//                        let baseURL = URL(string: "feather-local")!
-//                        load(data, mimeType: "text/html", characterEncodingName: "UTF-8", baseURL: baseURL)
-//
-//                    } else {
-//                        print("source html file not found in bundle")
-//                    }
-            
-        } else if fileName == js.editorName {
-            
-//            loadHTMLString(froalaInit(key: key), baseURL: bundle.bundleURL)
-                    if let url = bundle.url(forResource: fileName, withExtension: "html") {
-                        let request = URLRequest(url: url)
-                        load(request)
+        if let url = bundle.url(forResource: fileName, withExtension: "html") {
+            let request = URLRequest(url: url)
+            load(request)
 
 
-                    } else {
-                        print("source html file not found in bundle")
-                    }
-
+        } else {
+            print("source html file not found in bundle")
         }
-        
     }
     
     //MARK: delegate methods
