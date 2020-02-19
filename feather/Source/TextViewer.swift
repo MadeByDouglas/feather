@@ -168,10 +168,10 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         configuration.userContentController.addUserScript(script)
         
         // for custom base URLs
-        configuration.setURLSchemeHandler(FeatherSchemeHandler(), forURLScheme: "feather-local")
+//        configuration.setURLSchemeHandler(FeatherSchemeHandler(), forURLScheme: "feather-local")
         
         // listener for events
-        configuration.userContentController.add(self, name: js.linkOpen)
+//        configuration.userContentController.add(self, name: js.linkOpen)
     }
     
     private func setupFroalaScript(key: String) {
@@ -292,29 +292,29 @@ extension TextViewer {
 }
 
 
-class FeatherSchemeHandler: NSObject, WKURLSchemeHandler {
-    func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
-        
-        
-        let bundle = Bundle(for: TextViewer.self)
-        guard let url = bundle.url(forResource: "fr-view", withExtension: "html") else {
-            return
-        }
-        
-        let data = try! Data(contentsOf: url)
-        
-        let response = URLResponse(
-            url: urlSchemeTask.request.url!,
-            mimeType: "text/html",
-            expectedContentLength: -1,
-            textEncodingName: nil)
-        
-        urlSchemeTask.didReceive(response)
-        urlSchemeTask.didReceive(data)
-        urlSchemeTask.didFinish()
-    }
-    
-    func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
-        // do nothing
-    }
-}
+//class FeatherSchemeHandler: NSObject, WKURLSchemeHandler {
+//    func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
+//
+//
+//        let bundle = Bundle(for: TextViewer.self)
+//        guard let url = bundle.url(forResource: "fr-view", withExtension: "html") else {
+//            return
+//        }
+//
+//        let data = try! Data(contentsOf: url)
+//
+//        let response = URLResponse(
+//            url: urlSchemeTask.request.url!,
+//            mimeType: "text/html",
+//            expectedContentLength: -1,
+//            textEncodingName: nil)
+//
+//        urlSchemeTask.didReceive(response)
+//        urlSchemeTask.didReceive(data)
+//        urlSchemeTask.didFinish()
+//    }
+//
+//    func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
+//        // do nothing
+//    }
+//}
