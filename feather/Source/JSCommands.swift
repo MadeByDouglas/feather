@@ -113,6 +113,13 @@ enum JSCommands {
         }
     }
     
+    var selectAll: String {
+        switch self {
+        case .froala: return "editor.commands.selectAll();"
+        case .quill: return ""
+        }
+    }
+    
     // MARK: Toolbar commands
     
     var hideToolbar: String {
@@ -179,6 +186,13 @@ enum JSCommands {
         switch self {
         case .froala: return "editor.html.set('\(escapedText)');"
         case .quill: return "editor.setText('\(escapedText)');"
+        }
+    }
+    
+    func wrapHTML(temp: Bool, tables: Bool, quote: Bool) -> String {
+        switch self {
+        case .froala: return "editor.html.wrap(\(temp), \(tables), \(quote));"
+        case .quill: return ""
         }
     }
     

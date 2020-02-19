@@ -91,6 +91,10 @@ public class TextEditor: TextViewer {
         runJS(js.quoteDecrease)
     }
     
+    public func wrapAllQuotes() {
+        runJS(js.wrapHTML(temp: false, tables: false, quote: true))
+    }
+    
     public func increaseIndent() {
         runJS(js.indent)
     }
@@ -103,6 +107,10 @@ public class TextEditor: TextViewer {
     
     public func cursorEnter() {
         runJS(js.cursorEnter)
+    }
+    
+    public func selectAll() {
+        runJS(js.selectAll)
     }
     
     // MARK: - Image and File methods

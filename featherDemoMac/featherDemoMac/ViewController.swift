@@ -111,21 +111,14 @@ class ViewController: NSViewController {
     // MARK: Email Test
     
     @objc func didTapEmailThread() {
-        let string1 = "Hello jim how are you"
-        let string2 = "I am fine"
-        let string3 = "How is Joe?"
+        let emailText = """
+                        Hello jim how are you? <br>
+                        I am fine
+                        """
         
-        let emails = [string1, string2, string3]
+        let quoteText = "<blockquote>" + emailText + "</blockquote>"
         
-        for (index, email) in emails.enumerated() {
-            for _ in 0...index {
-                editView.increaseQuote()
-            }
-            editView.insertHTML(text: email)
-            editView.cursorEnter()
-
-        }
-        
+        editView.insertHTML(text: quoteText)
     }
     
     // MARK: Editor tap responses
