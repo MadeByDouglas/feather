@@ -34,17 +34,25 @@ public class TextViewer: WKWebView {
     
     var commandsToRunWhenReady: [String] = []
     
-    public init(type: EditorType, key: String = "", frame: CGRect, configuration: WKWebViewConfiguration = WKWebViewConfiguration()) {
+    convenience public init(type: EditorType) {
+        self.init(type: type, toolbar: nil)
+    }
+    
+    public init(type: EditorType, key: String = "", toolbar: String?, frame: CGRect = .zero, configuration: WKWebViewConfiguration = WKWebViewConfiguration()) {
         super.init(frame: frame, configuration: configuration)
-        setupWebView(type, key: key)
+        setupWebView(type, key: key, toolbar: toolbar)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
         
+    public func storyboardInit(_ type: EditorType, key: String = "", toolbar: String?) {
+        setupWebView(type, key: key, toolbar: toolbar)
+    }
+    
     public func storyboardInit(_ type: EditorType, key: String = "") {
-        setupWebView(type, key: key)
+        setupWebView(type, key: key, toolbar: nil)
     }
     
     func runJSData(_ js: String, completion: @escaping DataCompletion) {
@@ -140,7 +148,7 @@ public class TextViewer: WKWebView {
 extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     
     //MARK: Load Web View
-    private func setupWebView(_ type: EditorType, key: String) {
+    private func setupWebView(_ type: EditorType, key: String, toolbar: String?) {
         switch type {
         case .froala: js = JSCommands.froala
         case .quill: js = JSCommands.quill
@@ -150,8 +158,8 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         uiDelegate = self
         
         setupWebConfig()
-        if type == .froala {
-            setupFroalaScript(key: key)
+        if type == .froala && fileName == js.editorName {
+            setupFroalaScript(key: key, toolbar: toolbar)
         }
                 
         let frameworkBundle = Bundle(for: TextViewer.self)
@@ -174,8 +182,24 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
 //        configuration.userContentController.add(self, name: js.linkOpen)
     }
     
-    private func setupFroalaScript(key: String) {
-        guard fileName == js.editorName else { return }
+    private func setupFroalaScript(key: String, toolbar: String?) {
+        
+        let defaultToolbar = """
+                                'moreText': {
+                                  'buttons': ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'textColor', 'backgroundColor', 'inlineClass', 'inlineStyle', 'clearFormatting']
+                                },
+                                'moreParagraph': {
+                                  'buttons': ['alignLeft', 'alignCenter', 'formatOLSimple', 'alignRight', 'alignJustify', 'formatOL', 'formatUL', 'paragraphFormat', 'paragraphStyle', 'lineHeight', 'outdent', 'indent', 'quote']
+                                },
+                                'moreRich': {
+                                  'buttons': ['insertLink', 'insertImage', 'insertVideo', 'insertTable', 'emoticons', 'fontAwesome', 'specialCharacters', 'embedly', 'insertFile', 'insertHR']
+                                },
+                                'moreMisc': {
+                                  'buttons': ['undo', 'redo', 'fullscreen', 'print', 'getPDF', 'spellChecker', 'selectAll', 'html', 'help'],
+                                  'align': 'right',
+                                  'buttonsVisible': 2
+                                }
+                            """
 
         let jsString = """
                     var editor = new FroalaEditor('#editor', {
@@ -184,6 +208,9 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
                                                     charCounterCount: false,
                                                     placeholderText: '',
                                                     quickInsertEnabled: false,
+                                                    toolbarButtons: {
+                                                        \(toolbar ?? defaultToolbar)
+                                                    },
                                                   
                                                   events: {
                                                     'commands.after': function (cmd, param1, param2) {

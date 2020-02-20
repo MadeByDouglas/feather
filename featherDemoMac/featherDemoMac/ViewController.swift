@@ -19,6 +19,17 @@ class ViewController: NSViewController {
     
     var savedText = ""
     
+    let customToolbar = """
+                    'moreText': {
+                        'buttons': ['bold', 'italic', 'underline', 'strikeThrough', '|', 'fontFamily', 'fontSize', '|', 'textColor', 'backgroundColor', '|'],
+                        'buttonsVisible': 8
+                    },
+                    'moreParagraph': {
+                        'buttons': ['alignLeft', 'alignCenter', 'alignRight', '|', 'formatOL', 'formatUL', 'quote'],
+                        'buttonsVisible': 8
+                    },
+                """
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,11 +62,11 @@ class ViewController: NSViewController {
     
     func setup() {
         
-        editView = TextEditor(type: .froala, key: "LICENSE_KEY", frame: .zero)
+        editView = TextEditor(type: .froala, key: "LICENSE_KEY", toolbar: customToolbar)
         editView.translatesAutoresizingMaskIntoConstraints = false
         editView.textDelegate = self
         
-        textView = TextViewer(type: .froala, frame: .zero)
+        textView = TextViewer(type: .froala)
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.textDelegate = self
         textView.widthAnchor.constraint(equalToConstant: 300).isActive = true
