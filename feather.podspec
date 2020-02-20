@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = "Feather"
-  spec.version = "1.0.6"
+  spec.version = "1.0.7"
   spec.summary = "A modern html based rich text editor for iOS and macOS (Catalyst or AppKit) written in Swift. You can use Quill or Froala."
   spec.homepage = "https://github.com/MadeByDouglas/feather"
   spec.license = { type: 'MIT', file: 'LICENSE' }
