@@ -121,4 +121,14 @@ public class TextEditor: TextViewer {
         }
     }
     
+    // MARK: - Toolbar methods
+    
+    public func showToolbar() {
+        runJS(js.showToolbar)
+    }
+    
+    public func hideToolbar() {
+        runJS(js.hideToolbar)
+    }
+    
 }

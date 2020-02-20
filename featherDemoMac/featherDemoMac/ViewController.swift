@@ -83,6 +83,10 @@ class ViewController: NSViewController {
         
         let emailButton = NSButton(title: "EMAIL Thread", target: self, action: #selector(didTapEmailThread))
         
+        // MARK: toolbar
+        
+        let toolbarToggle = NSButton(title: "toolbar toggle", target: self, action: #selector(didTapToolbar))
+        
         // MARK: Editor Image and File commands
         
         let getImageButton = NSButton(title: "Editor: Get Image", target: self, action: #selector(didTapGetImage))
@@ -100,8 +104,8 @@ class ViewController: NSViewController {
         let vStack = NSStackView(views: [getButton, setButton, insertButton, getButtonViewer, setButtonViewer, getButtonViewerText, setButtonViewerText])
         vStack.orientation = .vertical
         
-        let vStackAttachments = NSStackView(views: [getImageButton, emailButton])
-        vStack.orientation = .vertical
+        let vStackAttachments = NSStackView(views: [getImageButton, emailButton, toolbarToggle])
+        vStackAttachments.orientation = .vertical
 
         
         stack = NSStackView(views: [editView, textView, vStack, vStackAttachments])
@@ -130,6 +134,18 @@ class ViewController: NSViewController {
         let quoteText = "<blockquote>" + emailText + "</blockquote>"
         
         editView.insertHTML(text: quoteText)
+    }
+    
+    // MARK: Toolbar
+    
+    var isToolbarShowing: Bool = true {
+        didSet {
+            isToolbarShowing ? editView.showToolbar() : editView.hideToolbar()
+        }
+    }
+    
+    @objc func didTapToolbar() {
+        isToolbarShowing = !isToolbarShowing
     }
     
     // MARK: Editor tap responses
