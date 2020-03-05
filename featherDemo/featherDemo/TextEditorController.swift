@@ -9,12 +9,12 @@
 import UIKit
 import Feather
 
-final class TextEditorController: UIViewController, UITextViewDelegate {
-    
+final class TextEditorController: UIViewController, UITextViewDelegate, TextViewerDelegate {
 
     var editView: TextEditor!
     var viewOnlyView: TextViewer!
     var button: UIButton!
+    var button2: UIButton!
         
     var stack: UIStackView!
     
@@ -31,18 +31,28 @@ final class TextEditorController: UIViewController, UITextViewDelegate {
         
         #endif
         
-        editView = TextEditor(type: .froala, frame: .zero)
+        editView = TextEditor(type: .froala)
         editView.translatesAutoresizingMaskIntoConstraints = false
         
-        viewOnlyView = TextViewer(type: .froala, frame: .zero)
+        viewOnlyView = TextViewer(type: .froala)
         viewOnlyView.translatesAutoresizingMaskIntoConstraints = false
+        viewOnlyView.textDelegate = self
+        viewOnlyView.backgroundColor = .systemBlue
 
                 
         button = UIButton(type: .contactAdd)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        
+        button2 = UIButton(type: .roundedRect)
+        button2.setTitle("Transfer", for: .normal)
+        button2.translatesAutoresizingMaskIntoConstraints = false
+        button2.addTarget(self, action: #selector(didTapButton2), for: .touchUpInside)
+        
+        let buttonStack = UIStackView(arrangedSubviews: [button, button2])
+        buttonStack.axis = .horizontal
 
-        stack = UIStackView(arrangedSubviews: [editView, viewOnlyView, button])
+        stack = UIStackView(arrangedSubviews: [editView, viewOnlyView, buttonStack])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
         stack.alignment = .fill
@@ -63,10 +73,30 @@ final class TextEditorController: UIViewController, UITextViewDelegate {
     @objc func didTapButton() {
         editView.insertHTML(text: "here's some text how about this 'text'")
     }
+    
+    @objc func didTapButton2() {
+        editView.getHTML { (result) in
+            switch result {
+            case .success(let html):
+                self.viewOnlyView.setHTML(text: html)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 
     
     func textViewDidChange(_ textView: UITextView) {
 //        let html = editView.getHTML()
 //        sourceView.editorView.loadHTMLString(html, baseURL: nil)
     }
+    
+    func heightDidChange(newHeight: CGFloat) {
+        viewOnlyView.heightAnchor.constraint(equalToConstant: newHeight).isActive = true
+    }
+    
+    func didTapLink(_ url: URL) {
+        //TODO: respond to links
+    }
+    
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C36430C02405F4A600DCCED2 /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36430BF2405F4A600DCCED2 /* TestCollectionViewController.swift */; };
+		C36430C82405F57400DCCED2 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36430C72405F57400DCCED2 /* TestCollectionViewCell.swift */; };
 		C36AFFD023C01D3300B33948 /* Feather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36AFFCF23C01D3300B33948 /* Feather.framework */; };
 		C36AFFD123C01D3300B33948 /* Feather.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C36AFFCF23C01D3300B33948 /* Feather.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C38988E0238495420019BFF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38988DF238495420019BFF5 /* AppDelegate.swift */; };
@@ -25,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C36430C52405F4A700DCCED2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3DE9C0423C01E7E004A1DB8 /* Feather.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A50EAEB123C11DBD000DBF40;
+			remoteInfo = FeatherTests;
+		};
 		C3DE9C0A23C01E7E004A1DB8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C3DE9C0423C01E7E004A1DB8 /* Feather.xcodeproj */;
@@ -63,6 +72,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C36430BF2405F4A600DCCED2 /* TestCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
+		C36430C72405F57400DCCED2 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
 		C36AFFCF23C01D3300B33948 /* Feather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Feather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38988DC238495420019BFF5 /* featherDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = featherDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38988DF238495420019BFF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +140,8 @@
 				C38988E1238495420019BFF5 /* SceneDelegate.swift */,
 				C38988F9238497000019BFF5 /* Mac Catalyst Toolbar */,
 				C389890A238497390019BFF5 /* TextEditorController.swift */,
+				C36430BF2405F4A600DCCED2 /* TestCollectionViewController.swift */,
+				C36430C72405F57400DCCED2 /* TestCollectionViewCell.swift */,
 				C3898907238497390019BFF5 /* TextFormatView.swift */,
 				C38988E5238495420019BFF5 /* Main.storyboard */,
 				C38988E8238495430019BFF5 /* Assets.xcassets */,
@@ -165,6 +178,7 @@
 				C3DE9C0B23C01E7E004A1DB8 /* Feather.framework */,
 				C3DE9C0D23C01E7E004A1DB8 /* FeatherAppKit.framework */,
 				C3DE9C0F23C01E7E004A1DB8 /* FeatherAppKitTests.xctest */,
+				C36430C62405F4A700DCCED2 /* FeatherTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,6 +245,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		C36430C62405F4A700DCCED2 /* FeatherTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FeatherTests.xctest;
+			remoteRef = C36430C52405F4A700DCCED2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		C3DE9C0B23C01E7E004A1DB8 /* Feather.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -275,8 +296,10 @@
 				C3898902238497000019BFF5 /* TextTouchbarManager.swift in Sources */,
 				C38988E0238495420019BFF5 /* AppDelegate.swift in Sources */,
 				C3898906238497000019BFF5 /* TextToolbarManager.swift in Sources */,
+				C36430C02405F4A600DCCED2 /* TestCollectionViewController.swift in Sources */,
 				C3898903238497000019BFF5 /* TextToolbarTouchbar.swift in Sources */,
 				C3898901238497000019BFF5 /* TextTouchbar Helpers.swift in Sources */,
+				C36430C82405F57400DCCED2 /* TestCollectionViewCell.swift in Sources */,
 				C389890B238497390019BFF5 /* TextFormatView.swift in Sources */,
 				C3898905238497000019BFF5 /* Text Helpers.swift in Sources */,
 				C3898904238497000019BFF5 /* TextToolbar.swift in Sources */,

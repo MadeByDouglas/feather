@@ -25,6 +25,7 @@ public enum EditorType {
 
 public protocol TextViewerDelegate: class {
     func didTapLink(_ url: URL)
+    func heightDidChange(newHeight: CGFloat)
 }
 
 public class TextViewer: WKWebView {
@@ -117,7 +118,7 @@ public class TextViewer: WKWebView {
     public func setHTML(text: String) {
         runJS(js.viewerSetHTML(text: text)) { (result) in
             switch result {
-            case .success(let html): print(html)
+            case .success(let html): print(html); self.getSize()
             case .failure(let error): print(error)
             }
         }
@@ -143,6 +144,20 @@ public class TextViewer: WKWebView {
             }
         }
     }
+    
+    // MARK: Size Methods
+    
+    func getSize() {
+        evaluateJavaScript("document.readyState", completionHandler: { (complete, error) in
+            if complete != nil {
+                self.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
+                    self.textDelegate?.heightDidChange(newHeight: height as! CGFloat)
+                })
+            }
+
+            })
+
+    }
 }
 
 extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
@@ -157,7 +172,13 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         navigationDelegate = self
         uiDelegate = self
         
+        #if os(iOS)
+        if fileName == js.viewerName {
+            disableScroll()
+        }
+        #endif
         setupWebConfig()
+        
         if type == .froala && fileName == js.editorName {
             setupFroalaScript(key: key, toolbar: toolbar)
         }
@@ -166,14 +187,42 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         loadRequest(frameworkBundle)
     }
     
+    #if os(iOS)
+    private func disableScroll() {
+        scrollView.isScrollEnabled = false
+        scrollView.bounces = false
+        scrollView.alwaysBounceVertical = false
+        scrollView.alwaysBounceHorizontal = false
+        scrollView.panGestureRecognizer.isEnabled = false
+        allowsBackForwardNavigationGestures = false
+    }
+    #endif
+    
     private func setupWebConfig() {
-        let source: String = "var meta = document.createElement('meta');" +
-            "meta.name = 'viewport';" +
-            "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
-            "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);";
+//        let source: String = "var meta = document.createElement('meta');" +
+//            "meta.name = 'viewport';" +
+//            "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
+//            "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);";
+        
+        let viewportScriptString = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); meta.setAttribute('initial-scale', '1.0'); meta.setAttribute('maximum-scale', '1.0'); meta.setAttribute('minimum-scale', '1.0'); meta.setAttribute('user-scalable', 'no'); document.getElementsByTagName('head')[0].appendChild(meta);"
 
-        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-        configuration.userContentController.addUserScript(script)
+        let disableSelectionScriptString = "document.documentElement.style.webkitUserSelect='none';"
+
+        let disableCalloutScriptString = "document.documentElement.style.webkitTouchCallout='none';"
+
+        
+        let viewportScript = WKUserScript(source: viewportScriptString, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        let disableSelectionScript = WKUserScript(source: disableSelectionScriptString, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        let disableCalloutScript = WKUserScript(source: disableCalloutScriptString, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+
+
+//        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+//        configuration.userContentController.addUserScript(script)
+        
+        configuration.userContentController.addUserScript(viewportScript)
+        configuration.userContentController.addUserScript(disableSelectionScript)
+        configuration.userContentController.addUserScript(disableCalloutScript)
+
         
         // for custom base URLs
 //        configuration.setURLSchemeHandler(FeatherSchemeHandler(), forURLScheme: "feather-local")
@@ -268,7 +317,14 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         
         
         for js in commandsToRunWhenReady {
-            runJS(js)
+            runJS(js) { (result) in
+                switch result {
+                case .success(_):
+                    self.getSize()
+                case .failure(let error):
+                    print(error)
+                }
+            }
         }
         commandsToRunWhenReady = []
     }
