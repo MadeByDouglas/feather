@@ -34,7 +34,7 @@ final class TextEditorController: UIViewController, UITextViewDelegate, TextView
         editView = TextEditor(type: .froala)
         editView.translatesAutoresizingMaskIntoConstraints = false
         
-        viewOnlyView = TextViewer(type: .froala)
+        viewOnlyView = TextViewer(type: .froala, isScrollingEnabled: true)
         viewOnlyView.translatesAutoresizingMaskIntoConstraints = false
         viewOnlyView.textDelegate = self
         viewOnlyView.backgroundColor = .systemBlue
