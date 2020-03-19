@@ -35,25 +35,17 @@ public class TextViewer: WKWebView {
     
     var commandsToRunWhenReady: [String] = []
     
-    convenience public init(type: EditorType) {
-        self.init(type: type, toolbar: nil)
-    }
-    
-    public init(type: EditorType, key: String = "", toolbar: String?, frame: CGRect = .zero, configuration: WKWebViewConfiguration = WKWebViewConfiguration()) {
+    public init(type: EditorType, key: String = "", toolbar: String? = nil, frame: CGRect = .zero, configuration: WKWebViewConfiguration = WKWebViewConfiguration(), isScrollingEnabled: Bool = false) {
         super.init(frame: frame, configuration: configuration)
-        setupWebView(type, key: key, toolbar: toolbar)
+        setupWebView(type, key: key, toolbar: toolbar, isScrollingEnabled: isScrollingEnabled)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
         
-    public func storyboardInit(_ type: EditorType, key: String = "", toolbar: String?) {
-        setupWebView(type, key: key, toolbar: toolbar)
-    }
-    
-    public func storyboardInit(_ type: EditorType, key: String = "") {
-        setupWebView(type, key: key, toolbar: nil)
+    public func storyboardInit(_ type: EditorType, key: String = "", toolbar: String? = nil, isScrollingEnabled: Bool = false) {
+        setupWebView(type, key: key, toolbar: toolbar, isScrollingEnabled: isScrollingEnabled)
     }
     
     func runJSData(_ js: String, completion: @escaping DataCompletion) {
@@ -163,7 +155,7 @@ public class TextViewer: WKWebView {
 extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     
     //MARK: Load Web View
-    private func setupWebView(_ type: EditorType, key: String, toolbar: String?) {
+    private func setupWebView(_ type: EditorType, key: String, toolbar: String?, isScrollingEnabled: Bool) {
         switch type {
         case .froala: js = JSCommands.froala
         case .quill: js = JSCommands.quill
@@ -174,7 +166,7 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         
         #if os(iOS)
         if fileName == js.viewerName {
-            disableScroll()
+            setScroll(isScrollingEnabled)
         }
         #endif
         setupWebConfig()
@@ -188,13 +180,13 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
     }
     
     #if os(iOS)
-    private func disableScroll() {
-        scrollView.isScrollEnabled = false
-        scrollView.bounces = false
-        scrollView.alwaysBounceVertical = false
-        scrollView.alwaysBounceHorizontal = false
-        scrollView.panGestureRecognizer.isEnabled = false
-        allowsBackForwardNavigationGestures = false
+    private func setScroll(_ value: Bool) {
+        scrollView.isScrollEnabled = value
+        scrollView.bounces = value
+        scrollView.alwaysBounceVertical = value
+        scrollView.alwaysBounceHorizontal = value
+        scrollView.panGestureRecognizer.isEnabled = value
+        allowsBackForwardNavigationGestures = value
     }
     #endif
     
