@@ -172,7 +172,8 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         setupWebConfig()
         
         if type == .froala && fileName == js.editorName {
-            setupFroalaScript(key: key, toolbar: toolbar)
+            let theme = self.traitCollection.userInterfaceStyle == .dark ? "dark" : "royal"
+            setupFroalaScript(key: key, toolbar: toolbar, theme: theme)
         }
                 
         let frameworkBundle = Bundle(for: TextViewer.self)
@@ -223,7 +224,7 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
 //        configuration.userContentController.add(self, name: js.linkOpen)
     }
     
-    private func setupFroalaScript(key: String, toolbar: String?) {
+    private func setupFroalaScript(key: String, toolbar: String?, theme: String) {
         
         let defaultToolbar = """
                                 'moreText': {
@@ -245,6 +246,7 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         let jsString = """
                     var editor = new FroalaEditor('#editor', {
                                                     key: "\(key)",
+                                                    theme: '\(theme)',
                                                     attribution: false,
                                                     charCounterCount: false,
                                                     placeholderText: '',
