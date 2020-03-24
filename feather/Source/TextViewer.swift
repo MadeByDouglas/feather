@@ -172,8 +172,16 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         setupWebConfig()
         
         if type == .froala && fileName == js.editorName {
-            let theme = self.traitCollection.userInterfaceStyle == .dark ? "dark" : "royal"
+            
+            #if os(iOS)
+            let style = self.traitCollection.userInterfaceStyle
+            let theme = style == .dark ? "dark" : "royal"
             setupFroalaScript(key: key, toolbar: toolbar, theme: theme)
+            #else
+            let theme = isDarkMode ? "dark" : "royal"
+            setupFroalaScript(key: key, toolbar: toolbar, theme: theme)
+            #endif
+            
         }
                 
         let frameworkBundle = Bundle(for: TextViewer.self)
@@ -224,7 +232,7 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
 //        configuration.userContentController.add(self, name: js.linkOpen)
     }
     
-    private func setupFroalaScript(key: String, toolbar: String?, theme: String) {
+    private func setupFroalaScript(key: String, toolbar: String?, theme: String = "royal") {
         
         let defaultToolbar = """
                                 'moreText': {
@@ -395,3 +403,17 @@ extension TextViewer {
 //        // do nothing
 //    }
 //}
+
+
+#if os(macOS)
+extension NSView {
+    var isDarkMode: Bool {
+        if #available(OSX 10.14, *) {
+            if effectiveAppearance.name == .darkAqua {
+                return true
+            }
+        }
+        return false
+    }
+}
+#endif
