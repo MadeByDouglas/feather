@@ -220,6 +220,10 @@ class ViewController: NSViewController {
 }
 
 extension ViewController: TextViewerDelegate {
+    func heightDidChange(newHeight: CGFloat) {
+        //TODO: do something with this for demo
+    }
+    
     func didTapLink(_ url: URL) {
         NSWorkspace.shared.open(url)
     }
