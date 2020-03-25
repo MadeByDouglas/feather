@@ -1,20 +1,28 @@
 <link href="froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
 
-<link href="dark.min.css" rel="stylesheet" type="text/css" />
-<link href="gray.min.css" rel="stylesheet" type="text/css" />
-<link href="royal.min.css" rel="stylesheet" type="text/css" />
-
 <script type="text/javascript" src="froala_editor.pkgd.min.js"></script>
 
 <div id="editor" ></div>
 
+<link href="dark.min.css" rel="stylesheet" type="text/css" />
+<link href="gray.min.css" rel="stylesheet" type="text/css" />
+<link href="royal.min.css" rel="stylesheet" type="text/css" />
+
+<link href="dark.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
+<link href="light.css" rel="stylesheet" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
+
 
 <style>
-    :root { color-scheme: light dark }
+    :root {
+        color-scheme: light dark;
+    }
+
+    /* layout */
+
     .fr-box {
-      display: flex;
-      height: 100%;
-      flex-direction: column;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
     }
 
     .fr-wrapper {
@@ -24,4 +32,72 @@
     .fr-element {
         min-height: 100%;
     }
+
+    /* colors and themes */
+
+    .fr-box.fr-basic .fr-wrapper {
+        background: var(--color-bg);
+        border: 0px;
+    }
+
+    .fr-view {
+        background-color: var(--color-bg);
+    }
+
+    .fr-toolbar {
+        border: 0px;
+    }
+
+    .fr-toolbar.fr-top {
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+    }
+
+    .second-toolbar {
+        background-color: var(--color-toolbar) !important;
+        border: 0px;
+    }
+
+    .fr-newline {
+        color: (--color-toolbar);
+    }
+
+    .fr-box.fr-basic .fr-element.fr-view {
+        color: var(--color-text);
+    }
+
+    /* below is necessary to work with froala dark theme which has different class names */
+
+    .dark-theme.fr-box.fr-basic .fr-wrapper {
+        background: var(--color-bg);
+        border: 0px;
+    }
+
+    .dark-theme.fr-view {
+        background-color: var(--color-bg);
+    }
+
+    .dark-theme.fr-toolbar {
+        border: 0px;
+    }
+
+
+    .dark-theme.fr-toolbar.fr-top {
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+    }
+
+    .dark-theme.second-toolbar {
+        background-color: var(--color-toolbar) !important;
+        border: 0px;
+    }
+
+    .dark-theme.fr-newline {
+        color: (--color-toolbar);
+    }
+
+    .dark-theme.fr-box.fr-basic .fr-element.fr-view {
+        color: var(--color-text);
+    }
+
 </style>

@@ -30,6 +30,10 @@
 		C352106823C54B620076EEB6 /* fr-view.html in Resources */ = {isa = PBXBuildFile; fileRef = C352106623C54B620076EEB6 /* fr-view.html */; };
 		C358DE1223C6D78500E1E9EC /* TextViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358DE1123C6D78500E1E9EC /* TextViewer.swift */; };
 		C358DE1323C6D78500E1E9EC /* TextViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358DE1123C6D78500E1E9EC /* TextViewer.swift */; };
+		C3646239242B595D00A85A44 /* dark.css in Resources */ = {isa = PBXBuildFile; fileRef = C3646238242B595D00A85A44 /* dark.css */; };
+		C364623A242B595D00A85A44 /* dark.css in Resources */ = {isa = PBXBuildFile; fileRef = C3646238242B595D00A85A44 /* dark.css */; };
+		C364623C242B596400A85A44 /* light.css in Resources */ = {isa = PBXBuildFile; fileRef = C364623B242B596400A85A44 /* light.css */; };
+		C364623D242B596400A85A44 /* light.css in Resources */ = {isa = PBXBuildFile; fileRef = C364623B242B596400A85A44 /* light.css */; };
 		C38988CD238494E20019BFF5 /* Feather.h in Headers */ = {isa = PBXBuildFile; fileRef = C38988CB238494E20019BFF5 /* Feather.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C3D8AC9E23FE1E6500DDBA70 /* plugins.pkgd.min.js in Resources */ = {isa = PBXBuildFile; fileRef = C3D8AC9C23FE1E6500DDBA70 /* plugins.pkgd.min.js */; };
 		C3D8AC9F23FE1E6500DDBA70 /* plugins.pkgd.min.js in Resources */ = {isa = PBXBuildFile; fileRef = C3D8AC9C23FE1E6500DDBA70 /* plugins.pkgd.min.js */; };
@@ -80,6 +84,8 @@
 		C350FA5B23BFF7BF005F0CF6 /* JSCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSCommands.swift; sourceTree = "<group>"; };
 		C352106623C54B620076EEB6 /* fr-view.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-view.html"; sourceTree = "<group>"; };
 		C358DE1123C6D78500E1E9EC /* TextViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewer.swift; sourceTree = "<group>"; };
+		C3646238242B595D00A85A44 /* dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dark.css; sourceTree = "<group>"; };
+		C364623B242B596400A85A44 /* light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = light.css; sourceTree = "<group>"; };
 		C38988C8238494E20019BFF5 /* Feather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38988CB238494E20019BFF5 /* Feather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feather.h; sourceTree = "<group>"; };
 		C38988CC238494E20019BFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -214,6 +220,8 @@
 		C3D8ACA223FE1E7100DDBA70 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
+				C3646238242B595D00A85A44 /* dark.css */,
+				C364623B242B596400A85A44 /* light.css */,
 				C3D8ACA323FE1E7100DDBA70 /* dark.min.css */,
 				C3D8ACA423FE1E7100DDBA70 /* gray.min.css */,
 				C3D8ACA523FE1E7100DDBA70 /* royal.min.css */,
@@ -373,11 +381,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C364623D242B596400A85A44 /* light.css in Resources */,
 				A595AB8523C2A55200C4DA12 /* quill.html in Resources */,
 				A595AB7F23C2A55200C4DA12 /* froala.html in Resources */,
 				C3D8ACA923FE1E7100DDBA70 /* gray.min.css in Resources */,
 				C3D9E8A523C9106B00516267 /* froala_style.min.css in Resources */,
 				C3D8ACA123FE1E6500DDBA70 /* plugins.pkgd.min.css in Resources */,
+				C364623A242B595D00A85A44 /* dark.css in Resources */,
 				C3D8ACAB23FE1E7100DDBA70 /* royal.min.css in Resources */,
 				C3D8ACA723FE1E7100DDBA70 /* dark.min.css in Resources */,
 				C352106823C54B620076EEB6 /* fr-view.html in Resources */,
@@ -399,11 +409,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C364623C242B596400A85A44 /* light.css in Resources */,
 				A595AB8423C2A55200C4DA12 /* quill.html in Resources */,
 				A595AB7E23C2A55200C4DA12 /* froala.html in Resources */,
 				C3D8ACA823FE1E7100DDBA70 /* gray.min.css in Resources */,
 				C3D9E8A423C9106B00516267 /* froala_style.min.css in Resources */,
 				C3D8ACA023FE1E6500DDBA70 /* plugins.pkgd.min.css in Resources */,
+				C3646239242B595D00A85A44 /* dark.css in Resources */,
 				C3D8ACAA23FE1E7100DDBA70 /* royal.min.css in Resources */,
 				C3D8ACA623FE1E7100DDBA70 /* dark.min.css in Resources */,
 				C352106723C54B620076EEB6 /* fr-view.html in Resources */,

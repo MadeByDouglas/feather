@@ -173,12 +173,16 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
         
         if type == .froala && fileName == js.editorName {
             
-            #if os(iOS)
-            let style = self.traitCollection.userInterfaceStyle
-            let theme = style == .dark ? "dark" : "royal"
+            #if targetEnvironment(macCatalyst)
+            let style = UITraitCollection.current.userInterfaceStyle
+            let theme = style == .dark ? "dark" : ""
+            setupFroalaScript(key: key, toolbar: toolbar, theme: theme)
+            #elseif os(iOS)
+            let style = UITraitCollection.current.userInterfaceStyle
+            let theme = style == .dark ? "dark" : ""
             setupFroalaScript(key: key, toolbar: toolbar, theme: theme)
             #else
-            let theme = isDarkMode ? "dark" : "royal"
+            let theme = isDarkMode ? "dark" : ""
             setupFroalaScript(key: key, toolbar: toolbar, theme: theme)
             #endif
             
@@ -232,7 +236,7 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
 //        configuration.userContentController.add(self, name: js.linkOpen)
     }
     
-    private func setupFroalaScript(key: String, toolbar: String?, theme: String = "royal") {
+    private func setupFroalaScript(key: String, toolbar: String?, theme: String = "") {
         
         let defaultToolbar = """
                                 'moreText': {
