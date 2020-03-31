@@ -220,6 +220,10 @@ class ViewController: NSViewController {
 }
 
 extension ViewController: TextViewerDelegate {
+    func didFinishLoading() {
+        //hooray its loaded
+    }
+    
     func heightDidChange(newHeight: CGFloat) {
         //TODO: do something with this for demo
     }

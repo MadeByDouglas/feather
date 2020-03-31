@@ -26,6 +26,7 @@ public enum EditorType {
 public protocol TextViewerDelegate: class {
     func didTapLink(_ url: URL)
     func heightDidChange(newHeight: CGFloat)
+    func didFinishLoading()
 }
 
 public class TextViewer: WKWebView {
@@ -327,6 +328,8 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
                 switch result {
                 case .success(_):
                     self.getSize()
+                    self.textDelegate?.didFinishLoading()
+
                 case .failure(let error):
                     print(error)
                 }
