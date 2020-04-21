@@ -113,6 +113,14 @@ public class TextEditor: TextViewer {
         runJS(js.selectAll)
     }
     
+    public func clearSelection() {
+        runJS(js.clearSelection)
+    }
+    
+    public func focus() {
+        runJS(js.focus)
+    }
+    
     // MARK: - Image and File methods
     
     public func getImage(completion: @escaping DataCompletion) {

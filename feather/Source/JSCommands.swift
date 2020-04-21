@@ -205,6 +205,13 @@ enum JSCommands {
         }
     }
     
+    var clearSelection: String {
+        switch self {
+        case .froala: return "editor.selection.clear();"
+        case .quill: return ""
+        }
+    }
+    
     // MARK: Image Commands
     
     var getImage: String {
@@ -214,7 +221,16 @@ enum JSCommands {
         }
     }
     
-    // MARK: Script Events
+    // MARK: Events Triggering
+    
+    var focus: String {
+        switch self {
+        case .froala: return "editor.events.focus();"
+        case .quill: return ""
+        }
+    }
+    
+    // MARK: Script Events Listening
     
     var linkOpen: String {
         switch self {
