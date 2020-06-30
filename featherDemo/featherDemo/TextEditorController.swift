@@ -99,4 +99,8 @@ final class TextEditorController: UIViewController, UITextViewDelegate, TextView
         //TODO: respond to links
     }
     
+    func didFinishLoading() {
+        //TODO: do something
+    }
+    
 }

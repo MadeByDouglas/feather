@@ -28,6 +28,10 @@ class TestCollectionViewCell: UICollectionViewCell, TextViewerDelegate {
         delegate.didUpdateHeight(cell: self, height: newHeight)
     }
     
+    func didFinishLoading() {
+        //do nothing
+    }
+    
     
     @IBOutlet weak var textView: TextViewer!
     
