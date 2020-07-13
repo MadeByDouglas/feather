@@ -319,10 +319,6 @@ extension TextViewer: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler
     
     //MARK: delegate methods
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        becomeFirstResponder()
-        
-        
-        
         for js in commandsToRunWhenReady {
             runJS(js) { (result) in
                 switch result {
