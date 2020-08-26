@@ -18,6 +18,9 @@ public typealias DataCompletion = (DataResult) -> Void
 public typealias StringResult = Swift.Result<String, Error>
 public typealias StringCompletion = (StringResult) -> Void
 
+public typealias CGFloatResult = Swift.Result<CGFloat, Error>
+public typealias CGFloatCompletion = (CGFloatResult) -> Void
+
 public enum EditorType {
     case froala
     case quill
@@ -139,6 +142,26 @@ public class TextViewer: WKWebView {
     }
     
     // MARK: Size Methods
+    
+    public func getSizeNow(completion: @escaping CGFloatCompletion) {
+        evaluateJavaScript("document.readyState", completionHandler: { (complete, error) in
+            if complete != nil {
+                self.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
+                    if let error = error {
+                        completion(.failure(error))
+                        return
+                    }
+                    
+                    if let height = height as? CGFloat {
+                        completion(.success(height))
+                    } else {
+                        completion(.success(.zero))
+                    }
+                    
+                })
+            }
+        })
+    }
     
     func getSize() {
         evaluateJavaScript("document.readyState", completionHandler: { (complete, error) in
